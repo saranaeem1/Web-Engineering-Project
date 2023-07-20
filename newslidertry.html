@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .slider {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    /* Add animation for slide transition */
+    @keyframes slideAnimation {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Add styles for previous and next icons */
+    .slider-controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .slider-controls i {
+      cursor: pointer;
+      margin: 0 5px;
+      padding: 5px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slide">
+      <img src="IS 1.png" alt="Image 1">
+    </div>
+    <div class="slide">
+      <img src="IS 10.jfif" alt="Image 2">
+    </div>
+    <div class="slide">
+      <img src="IS 12.jfif" alt="Image 3">
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <i class="fas fa-chevron-left" onclick="previousSlide()"></i>
+    <i class="fas fa-chevron-right" onclick="nextSlide()"></i>
+  </div>
+
+  <script>
+    // Add JavaScript to switch between slides
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function previousSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Show the initial slide
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>

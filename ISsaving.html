@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/6c526894c6.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+      <title>Saving in Illustrator</title>
+      
+        <style>
+          * ************************************************NAVBAR AND SIDEBAR********************************************** */
+     {@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');} 
+ /* **********************MEDIA QUERY************** */
+ 
+ @media only screen and (max-width:768px){
+  body{
+    max-width: 100%;
+    height:auto;
+    overflow-x:hidden;
+  }
+  
+.blog_main_para{
+  word-wrap: break-word;
+  max-width: 350px;
+
+}
+.flexbox_main{
+  display:flex;
+  flex-direction: column;
+}
+.flexbox1 p{
+  word-wrap: break-word;
+  max-width: 350px;
+  margin:20px;
+}
+.blogsgallery{
+margin:20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  overflow-x:hidden;
+}
+.blogs img{
+  width: 150px;height:150px;
+}
+iframe{
+width:200px;
+  height:auto;
+  overflow:clip;
+}
+.heading{
+    font-size:14;
+}
+}
+
+
+
+
+
+iframe{
+  width:560px;
+  height:315px;
+  overflow: clip;
+  margin-bottom:30px;
+}
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Home Page */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: black;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+nav .navigation ul li a:hover {
+    color: lightgray;
+}
+
+nav .openbtn {
+    font-size: 1.7rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-left: -50%;
+    position: relative;
+    padding: 10px 10px;
+    border: none;
+}
+
+nav .openbtn:hover {
+
+    color: rgb(140, 221, 241);
+}
+
+.toggle_btn {
+    color: white;
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dropdown_menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu ul li a {
+    text-decoration: none;
+    color: #3b97e3;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+/* Media query for responsive navbar */
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+        left: 2rem;
+        width: unset;
+    }
+
+    nav .openbtn {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: -1%;
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.19)0px 10px 20px, rgba(0, 0, 0, 0.23)0px 6px 6px;
+}
+
+
+.sidebar a {
+    padding: 8px 8px 4px 26px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar i {
+    padding: 5px;
+}
+
+.sidebar a:hover {
+    color: rgb(140, 221, 241);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.pic {
+  margin-bottom:10px ;
+    width: 85%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightpink;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    /* box-shadow: rgba(0,0,0,0.19)0px 10px 20px,rgba(0,0,0,0.23)0px 6px 6px; */
+}
+
+.pic img {
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+.announce h4 {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.pic p {
+    font-size: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 50;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pic button {
+    padding: 5px 5px;
+    width: 100px;
+    background-color: #ec0d66;
+    color: #fff;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+        /* margin-top: 20%; */
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .pic {
+        max-width: 50%;
+    }
+
+
+  }
+            /* **********************FLEX BOXES************** */
+.flexbox2{
+  margin-top:40px;
+}
+
+.fleximg{
+  width:600px;
+  height:400px;
+}
+
+.flexbox1{
+    width:500px;
+margin-right:160px;
+}
+.heading2{
+    color: hsla(0, 0%, 1%, 0.773);
+    margin-left: 35px;
+    padding-top:10px;}
+
+p{
+    margin-top:15px ;
+    margin-left: 35px;
+    word-wrap:break-word;
+    text-align: justify;
+}
+.flexbox_main{
+display: flex;
+}
+
+.move{
+    width:470px;
+    padding-left:30px;
+
+}
+#pen{
+    height:300px;
+    padding-top: 30px;
+}
+     
+      
+    
+    /* ********************************PROJECT COURSE PART**************************************** */
+    .blog_main{
+    background:url(isaving.png);
+    background-repeat:no-repeat ;
+    background-position-y:40%;
+
+  
+  }
+  .blog_main{
+        width:100%;
+max-height: 700px;
+  }
+.blog_button{padding: 10px 20px;
+    background: #020202;
+    color: white;
+margin-top:20px;
+  border-color: #fdfdfd;
+   
+    align-items: center;
+    margin-right: 10px;
+  border-style:double;
+  border-radius: 0px;
+  cursor: pointer;
+}
+.ps{
+  font-size: 40px;
+  margin-left:50px;
+    padding-top: 80px;
+  color: hsla(161, 69%, 16%, 0.773);
+ 
+}
+
+.ps1{margin-left:20px;
+    padding-top: 80px;
+  color: hsla(0, 0%, 100%, 0.773);}
+  
+
+
+#btn2blog{
+    margin-left: 50px;
+    background-color: hsla(0, 0%, 100%, 0);
+  color: rgb(17, 88, 48);
+  border-color: #125e52;
+  transition: width 2s;
+
+}
+#btn2blog:hover{
+width:100px;
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(1, 1, 1);
+  border-color: #000000;
+}
+.blog_button:hover{
+    background-color: hsl(152, 80%, 73%);
+  color: rgb(0, 0, 0);
+  border-color: #f8f8f8;
+  
+   
+  
+    
+}
+.blog_main_para{
+  word-wrap:break-word;
+  
+    width:500px;
+    color:rgb(8, 8, 8);
+    padding-left: 10px;
+}
+
+
+
+
+
+/* ********************************OTHER BLOGS******************************* */
+.blogsheading{
+    text-align: center;
+    margin-bottom: 20px;
+  margin-top: 50px;
+}
+.desc a{
+  text-decoration: none;
+  color:black;
+}
+.desc a:hover{
+  color:black;
+}
+.desc a:visited{
+  color:#0a0a0a;
+}
+
+.blogsgallery{
+  display:flex;
+  flex-direction: row;
+  font-size: large;
+    margin-top:60px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.blogs {
+margin:10px;
+  border: 1px solid #0fd8ce;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height:auto;
+  transition: top 0.3s;
+  position:relative;
+}
+
+
+
+div.blogs:hover {
+  top: 10px;
+  border: 1px solid #14ffd4; /* Adjust the value to control the distance of the movement */
+}
+
+
+div.blogs img {
+  width: 200px;
+  height: 250px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.desc:hover{
+    font-weight: bold;
+}
+
+
+    /* **** *****************************HEADING STYLE OF FLEX*********** */
+    span {
+  margin-left:25px;
+  margin-top:20px;
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  font-size: 30px;
+  font-weight: bold;
+  padding:5px;
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+/* **********************************TABLE OPTIONS****************** */
+.saving-options {
+  
+  margin-bottom:40px;
+margin:auto;
+  width:auto;
+  word-wrap:break-word;
+  border-collapse: collapse;
+  
+}
+
+.saving-options th,
+.saving-options td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.saving-options th {
+  background-color: #50ffd9;
+  font-weight: bold;
+}
+
+.saving-options tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.saving-options tbody tr:hover {
+  background-color: #48ffcb;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    background-color: #cfdffaf8;
+  }
+  to {
+    background-color: #6cf2cc;
+  }
+}
+ /* ********************************FOOTER**************************************** */
+
+ footer {
+  margin-top: 20px;
+  background-color: #24262d;
+  padding: 50px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: center; 
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.footer-column p{
+  margin-left:0px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #bbb;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-media li a:hover {
+  color: #bbb;
+}
+
+.footer-bottom {
+  background-color:#797878;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+
+}
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-container {
+    justify-content: space-around; 
+  }
+
+  .footer-column {
+    width: 33.33%;
+    text-align: left; 
+  }
+
+}
+
+@media (min-width: 992px) {
+  .footer-column {
+    width: 25%;
+  }
+
+}/* ********************************FOOTER**************************************** */
+
+ footer {
+  margin-top: 20px;
+  background-color: #24262d;
+  padding: 50px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: center; 
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #bbb;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-media li a:hover {
+  color: #bbb;
+}
+
+.footer-bottom {
+  background-color:#797878;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+
+}
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-container {
+    justify-content: space-around; 
+  }
+
+  .footer-column {
+    width: 33.33%;
+    text-align: left; 
+  }
+
+}
+
+@media (min-width: 992px) {
+  .footer-column {
+    width: 25%;
+  }
+
+}
+
+    </style>
+
+
+</head>
+
+<body>
+  <!--***********************************************NAVBAR AND SIDEBAR*************************************************************************-->
+  <nav>
+    <img src="questionnaire (1) (1).png" alt="logo">
+    <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+    <div class="navigation">
+
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+    <!--For responsive navbar-->
+    <div class="toggle_btn"><i class="fas fa-bars"></i></div>
+    <div class="dropdown_menu">
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- side bar -->
+<div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <a href="Iluustrator.html">Illustrator Home Page</a>
+    <a href="introtoistools.html">Introduction to Tools</a>
+    <a href="ISlogodesigning.html">Logo Designing</a>
+    <a href="illustrations.html">Illustrations</a>
+    <div class="announce">
+        <h4>New Announcement</h4>
+    </div>
+
+    <div class="pic">
+
+        <img src="Add a heading(7).jpeg" alt="">
+        <p>Attention all graphic designers and creative enthusiasts!
+            We are thrilled to unveil our brand new graphic course, designed to
+            equip you with the skills.Get ready to unlock your creative potential
+            and embark on a transformative learning journey.</p>
+        <button>Learn more</button>
+    </div>
+</div>
+
+<script>
+    const openSidebar = () => {
+        document.getElementById("mySidebar").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "150px";
+    };
+
+    const closeSidebar = () => {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    };
+
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+    toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open');
+        const isOpen = dropdownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    };
+
+</script>
+    <!--***************************MAIN PART******************--> 
+    <div class="blog1">
+      <div class="blog_main">
+        <h1 class="ps">How to Save in Illustrator</h1>
+            <p class="blog_main_para">Click on "Save" or "Save As" to bring up the saving options.
+                "Save" will save the document with the same name and file format if it has been previously saved. Otherwise, it will work like "Save As."
+                "Save As" allows you to specify a new name, location, and file format for the document.
+                Choose a location on your computer where you want to save the file.</p>
+            <button class="blog_button"id="btn2blog">Home</button>
+            <button onclick="window.location.href='index3.php';" class="blog_button">Take Quiz</button>
+      </div>
+      
+            <div class="flexbox_main">
+                    <div class="flexbox1">
+                      <span style="--i:1">Saving Options</span>
+                     
+                     
+                        <p>
+                            Open your Illustrator document or create a new one.
+Go to the "File" menu in the top menu bar.
+Click on "Save" or "Save As" to bring up the saving options.
+"Save" will save the document with the same name and file format if it has been previously saved. Otherwise, it will work like "Save As."
+"Save As" allows you to specify a new name, location, and file format for the document.
+Choose a location on your computer where you want to save the file.
+Enter a name for the file in the "File Name" field.
+Choose the desired file format from the "Save As Type" or "Format" dropdown menu. Illustrator supports various file formats, including AI (native Illustrator format), EPS, PDF, 
+                        </p> 
+    
+                    </div>
+                    <div class="flexbox2">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/_8oj8jW_yco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                   </div>
+            
+                    
+                </div>
+                 
+<!-- ******************************TABLE**************************-->
+<table class="saving-options">
+    <thead>
+      <tr>
+        <th>Save Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Save</td>
+        <td>Save the Illustrator document in its native .PSD format, preserving layers and editing capabilities.</td>
+      </tr>
+      <tr>
+        <td>Save As</td>
+        <td>Save a copy of the document with a different name, location, or format.</td>
+      </tr>
+      <tr>
+        <td>Export As</td>
+        <td>Export the document for web or non-editable purposes with control over file formats and optimization settings.</td>
+      </tr>
+      <tr>
+        <td>Quick Export as PNG/JPEG</td>
+        <td>Quickly export selected layer(s) or the document as PNG or JPEG files.</td>
+      </tr>
+      <tr>
+        <td>Save for Web</td>
+        <td>Optimize images specifically for web use with various settings for file size and quality.</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+
+
+
+
+
+
+
+   <!--************************BLOGS*************************-->
+   <h1 class="blogsheading">LEARN MORE </h1>
+<div class="blogsgallery">
+<div class="blogs">
+    <img src="IS 14.jfif" alt="Cinque Terre">
+
+<div class="desc"><a href="ISlogodesigning.html">Logo Designing</a></div>
+</div>
+
+<div class="blogs">
+    <img src="IS 15.webp" alt="Forest">
+  
+    <div class="desc"><a href="ISlogodesigning.html">Logo Designing</a></div>
+</div>
+<div class="blogs">
+    <img src="IS 16.png" alt="Forest">
+    <div class="desc"><a href="ISlogodesigning.html">Logo Designing</a></div>
+
+</div>
+
+
+</div>
+<!--********************************FOOTER**************************************** -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="final.html">Home</a></li>
+        <li><a href="final.html#courses">Courses</a></li>
+        <li><a href="final.html#instructor">Instructors</a></li>
+        <li><a href="help.php">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-media">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Questionaire Website. All rights reserved.</p>
+  </div>
+</footer>
+  
+    
+  
+
+
+    </body>
+</html>

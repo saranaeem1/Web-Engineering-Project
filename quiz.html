@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e2d8a67779.js" crossorigin="anonymous"></script>
+    
+    <title>Document</title>
+</head>
+<style>
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width:768px){
+  body{
+    max-width: 100%;
+    height:auto;
+    overflow-x:hidden;
+  }
+  blog_main{
+    height:400px;
+  }
+
+.blog_main_para{
+  word-wrap: break-word;
+  max-width: 350px;
+}
+
+.tableofcontent{
+  margin-bottom: -50px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  overflow-x:hidden;
+}
+.instgallery{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-bottom:20px;
+  
+}
+.notes_gallery{
+  height:auto;
+}
+
+}
+      
+      * ************************************************NAVBAR AND SIDEBAR********************************************** */
+     {@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');} 
+
+     * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+/* Home Page */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: black;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+nav .navigation ul li a:hover {
+    color: lightgray;
+}
+
+nav .openbtn {
+    font-size: 1.7rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-left: -50%;
+    position: relative;
+    padding: 10px 10px;
+    border: none;
+}
+
+nav .openbtn:hover {
+
+    color: rgb(140, 221, 241);
+}
+
+.toggle_btn {
+    color: white;
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dropdown_menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu ul li a {
+    text-decoration: none;
+    color: #3b97e3;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+/* Media query for responsive navbar */
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+        left: 2rem;
+        width: unset;
+    }
+
+    nav .openbtn {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: -1%;
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.19)0px 10px 20px, rgba(0, 0, 0, 0.23)0px 6px 6px;
+}
+
+
+.sidebar a {
+    padding: 8px 8px 4px 26px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar i {
+    padding: 5px;
+}
+
+.sidebar a:hover {
+    color: rgb(140, 221, 241);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.pic {
+  margin-bottom:10px ;
+    width: 85%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightpink;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    /* box-shadow: rgba(0,0,0,0.19)0px 10px 20px,rgba(0,0,0,0.23)0px 6px 6px; */
+}
+
+.pic img {
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+.announce h4 {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.pic p {
+    font-size: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 50;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pic button {
+    padding: 5px 5px;
+    width: 100px;
+    background-color: #ec0d66;
+    color: #fff;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+        /* margin-top: 20%; */
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .pic {
+        max-width: 50%;
+    }
+
+
+  }
+
+
+
+  .text{
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    padding: 10px 15px;
+    margin-top: 2%;
+    gap: 20%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.text h1{
+  color:rgba(24, 151, 235, 0.829);
+  text-shadow: 2px 2px 2px #494848;
+  font-size:50px;
+  margin-top:50px;
+  margin-bottom: 30px;
+}
+
+
+.text p{
+
+    
+    font-family: sans-serif;
+    word-wrap: break-word;
+    text-align: center;
+    width:450px;
+    margin:auto;
+    
+}
+
+.tableofcontent{
+  width:auto;
+  margin:auto;
+  flex-wrap:wrap ;
+  height: auto;
+  flex-direction: row;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 30px;
+
+
+}
+.desc a{
+  text-decoration: none;
+  color:black;
+}
+.desc a:hover{
+  color:black;
+}
+.desc a:visited{
+  color:#0a0a0a;
+}
+div.gallery {
+  float: left;
+  margin: 10px;
+  border: 1px solid #ccc;
+  width: 180px;
+  position: relative;
+  transition: top 0.3s;
+}
+
+.div.gallery::before {
+  /* ... */
+  transition: opacity 0.3s;
+}
+
+div.gallery:hover {
+  top: -10px; /* Adjust the value to control the distance of the movement */
+}
+
+div.gallery:hover::before {
+  opacity: 0;
+}
+  
+
+
+div.gallery:hover {
+  border: 1px solid #1dc8b7;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 200px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+div.desc:hover{
+  font-weight: bold;
+}
+footer {
+    background-color: #24262d;
+    padding: 50px 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer-column ul li a:hover {
+    color: #bbb;
+}
+#social-media li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#social-media li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#social-media li a:hover {
+    color: #bbb;
+}
+
+.footer-bottom {
+    background-color: #797878;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Responsive Styles for footer*/
+@media (min-width: 770px) {
+    .footer-container {
+        justify-content: space-around;
+    }
+
+    .footer-column {
+        width: 33.33%;
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-column {
+        width: 25%;
+    }
+}
+</style>
+
+<body>
+  <nav>
+    <img src="questionnaire (1) (1).png" alt="logo">
+    <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+    <div class="navigation">
+
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+    <!--For responsive navbar-->
+    <div class="toggle_btn"><i class="fas fa-bars"></i></div>
+    <div class="dropdown_menu">
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- side bar -->
+<div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <a href="introtoistools.html">Introduction to Tools</a>
+    <a href="ISlogodesigning.html">Logo Designing</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="ISsaving.html">Saving Options</a>
+    
+    <div class="announce">
+        <h4>New Announcement</h4>
+    </div>
+
+    <div class="pic">
+
+        <img src="Add a heading(7).jpeg" alt="">
+        <p>Attention all graphic designers and creative enthusiasts!
+            We are thrilled to unveil our brand new graphic course, designed to
+            equip you with the skills.Get ready to unlock your creative potential
+            and embark on a transformative learning journey.</p>
+        <button>Learn more</button>
+    </div>
+</div>
+
+<script>
+    const openSidebar = () => {
+        document.getElementById("mySidebar").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "150px";
+    };
+
+    const closeSidebar = () => {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    };
+
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+    toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open');
+        const isOpen = dropdownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    };
+
+</script>
+    
+<div class="text">
+  <h1>Adobe Photoshop Quiz topics</h1>
+  <p>These quizzes are mandatory to solve to make the concepts clear. This is multiple choice questions of Adobe Illustrator for the students to test your knowledge of Adobe Illustrator.</p>
+</div>
+      
+     
+    <div class="tableofcontent">
+              
+        <div class="gallery">
+            <img src="pic 13.jpg" alt="Cinque Terre" width="600" height="400">
+          </a>
+          <div class="desc"><a href="index4.php">Introduction to Tools</a></div>
+        </div>
+         
+        <div class="gallery">
+            <img src="pi 14.jpg" alt="Forest" width="600" height="400">
+          
+          <div class="desc"><a href="index5.php">Logo Designing</a></div>
+        </div>
+        
+        <div class="gallery">
+            <img src="pic 14.jpg" alt="Northern Lights" width="600" height="400">
+            <div class="desc"><a href="index6.php">Photo Editing</a></div>
+        </div>
+        
+        
+        <div class="gallery">
+            <img src="pic 15.jfif" alt="Cinque Terre" width="600" height="400">
+            <div class="desc"><a href="index7.php">Animations</a></div>
+        </div>
+        
+        <div class="gallery">
+            <img src="pic 16.jpg" alt="Forest" width="600" height="400">
+            <div class="desc"><a href="index8.php">Saving Options</a></div>
+          
+        </div>
+      </div>
+        </div>
+        <footer>
+          <div class="footer-container">
+              <div class="footer-column">
+                  <h3>About Us</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+              </div>
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul>
+                    <li><a href="final.html">Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>
+                    <li><a href="help.php">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column" id="social-media">
+                  <h3>Follow Us</h3>
+                  <ul>
+                      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2023 Questionnaire Website. All rights reserved.</p>
+          </div>
+      </footer>
+   
+
+
+</body>
+
+</html>
