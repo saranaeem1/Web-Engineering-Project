@@ -1,0 +1,623 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 16, 2023 at 08:13 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `questionaire`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `choices`
+--
+
+CREATE TABLE `choices` (
+  `id` int(15) NOT NULL,
+  `quizID` int(11) NOT NULL,
+  `quesID` int(15) NOT NULL,
+  `is_correct` tinyint(1) NOT NULL DEFAULT 0,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `choices`
+--
+
+INSERT INTO `choices` (`id`, `quizID`, `quesID`, `is_correct`, `text`) VALUES
+(1, 1, 1, 1, '1987'),
+(2, 1, 1, 0, '1988'),
+(3, 1, 1, 0, '1989'),
+(4, 1, 1, 0, '1990'),
+(5, 1, 2, 1, 'Maximize Screen Mode'),
+(6, 1, 2, 0, 'Standard Screen Mode'),
+(7, 1, 2, 0, 'Full-Screen Mode with Menu Bar'),
+(8, 1, 2, 0, 'Full-Screen Mode '),
+(9, 1, 3, 0, 'Lines'),
+(10, 1, 3, 0, 'Curves'),
+(11, 1, 3, 1, 'Both A and B'),
+(12, 1, 3, 0, 'None of the above'),
+(13, 1, 4, 0, '3'),
+(14, 1, 4, 1, '2'),
+(15, 1, 4, 0, '1'),
+(16, 1, 4, 0, '4'),
+(17, 1, 5, 0, 'Scalar'),
+(18, 1, 5, 1, 'Vector'),
+(19, 1, 5, 0, 'Freestyle'),
+(20, 1, 5, 0, 'None'),
+(21, 1, 6, 0, 'In order to install Illustrator, you will need a minimum of 2GB/4GB of RAM, depending on whether you are installing 32 bits or 64 bits.'),
+(22, 1, 6, 0, 'You can use either an Intel multicore processor with 32 or 65-bit support or an AMD Athlon 64 processor to run Illustrator.'),
+(23, 1, 6, 0, 'Windows 7 or later should have been installed.'),
+(24, 1, 6, 1, 'All of the above'),
+(37, 2, 11, 0, 'Ctrl + P'),
+(38, 2, 11, 1, 'Ctrl + K'),
+(39, 2, 11, 0, 'Ctrl + D'),
+(40, 2, 11, 0, 'Ctrl + B'),
+(41, 2, 12, 0, 'Pencil Tool'),
+(42, 2, 12, 0, ' Brush Tool'),
+(43, 2, 12, 0, 'Eraser Tool'),
+(44, 2, 12, 1, 'Pen Tool '),
+(45, 2, 13, 0, 'Use as many colors as possible'),
+(46, 2, 13, 0, 'Make the logo as complex as possible'),
+(47, 2, 13, 1, 'Ensure the logo is easily recognizable and memorable'),
+(48, 2, 13, 0, ' Use a different font for each letter in the logo'),
+(49, 2, 14, 1, 'To allow for easy resizing without losing quality'),
+(50, 2, 14, 0, ' To add special effects and filters'),
+(51, 2, 14, 0, 'To create animations '),
+(52, 2, 14, 0, ' To optimize the logo for web use'),
+(53, 2, 15, 0, 'JPG '),
+(54, 2, 15, 0, ' GIF   '),
+(55, 2, 15, 0, 'PNG'),
+(56, 2, 15, 1, 'AI'),
+(57, 2, 16, 1, 'Layer panel'),
+(59, 2, 16, 0, 'Appearance panel'),
+(60, 2, 16, 0, 'Swatches panel'),
+(62, 2, 16, 0, 'Swatches panel'),
+(64, 1, 7, 0, 'Photo editing\r\n'),
+(65, 1, 7, 0, 'Video editing\r\n'),
+(66, 1, 7, 1, 'Vector graphics creation\r\n'),
+(67, 1, 7, 0, '3D modeling'),
+(72, 1, 9, 0, '.JPEG and .GIF\r\n'),
+(73, 1, 9, 0, ' .DOC and .TXT\r\n '),
+(74, 1, 9, 1, '.PDF and .EPS\r\n'),
+(75, 1, 9, 0, ' .MP4 and .AVI'),
+(80, 1, 8, 1, 'They have a smaller file size compared to raster graphics.\r\n'),
+(81, 1, 8, 0, 'They allow for more realistic and detailed images.\r\n'),
+(82, 1, 8, 0, 'They are better suited for photo manipulation.\r\n'),
+(83, 1, 8, 0, 'They can only be created using specific drawing tablets.'),
+(84, 1, 10, 0, 'Eyedropper tool\r\n'),
+(85, 1, 10, 1, 'Gradient tool\r\n'),
+(86, 1, 10, 0, 'Paintbrush tool\r\n'),
+(87, 1, 10, 0, 'Text tool'),
+(88, 2, 17, 0, 'RGB\r\n'),
+(89, 2, 17, 1, 'CMYK\r\n'),
+(90, 2, 17, 0, 'HSB\r\n'),
+(91, 2, 17, 0, 'LAB'),
+(92, 2, 18, 1, 'Smart Guides\r\n'),
+(93, 2, 18, 0, 'Rulers\r\n'),
+(94, 2, 18, 0, 'Grids\r\n'),
+(95, 2, 18, 0, 'Transform panel'),
+(96, 2, 19, 0, 'To explore different design concepts for the logo\r\n'),
+(97, 2, 19, 1, 'To create multiple versions for different platforms and applications\r\n'),
+(98, 2, 19, 0, 'To add visual effects and filters to the logo design\r\n'),
+(99, 2, 19, 0, 'To merge multiple logos into a single design'),
+(100, 2, 20, 0, 'Clipping Mask\r\n'),
+(101, 2, 20, 0, 'Opacity Mask\r\n'),
+(102, 2, 20, 1, 'Live Paint Bucket\r\n'),
+(103, 2, 20, 0, 'Pathfinder'),
+(144, 3, 21, 0, 'Motion Effects '),
+(145, 3, 21, 1, 'Animation Timeline '),
+(146, 3, 21, 0, ' Keyframe Animation  '),
+(147, 3, 21, 0, 'Animation Panel'),
+(148, 3, 22, 0, ' Layers panel '),
+(149, 3, 22, 0, 'Appearance panel'),
+(150, 3, 22, 0, ' Properties panel'),
+(151, 3, 22, 1, ' Timeline panel'),
+(152, 3, 23, 1, 'Pen tool  '),
+(153, 3, 23, 0, 'Pencil tool '),
+(154, 3, 23, 0, 'Line Segment tool '),
+(155, 3, 23, 0, 'Spiral tool'),
+(156, 3, 24, 0, ' The first frame of the animation sequence '),
+(157, 3, 24, 1, ' A frame that marks a significant change in the animation '),
+(158, 3, 24, 0, ' A frame that is automatically generated by Illustrator '),
+(159, 3, 24, 0, 'The last frame of the animation sequence'),
+(160, 3, 25, 0, '.AI'),
+(161, 3, 25, 0, ' .SVG '),
+(162, 3, 25, 1, ' .GIF  '),
+(163, 3, 25, 0, '.EPS'),
+(164, 3, 26, 0, 'Opacity'),
+(165, 3, 26, 0, 'Position '),
+(166, 3, 26, 1, 'Timing'),
+(167, 3, 26, 0, 'Transition'),
+(168, 3, 27, 1, ' Play button   '),
+(169, 3, 27, 0, 'Preview panel'),
+(170, 3, 27, 0, 'Animation settings '),
+(171, 3, 27, 0, 'Export options'),
+(172, 3, 28, 1, 'By changing the frame rate in the Animation settings'),
+(173, 3, 28, 0, '  By resizing the animation canvas'),
+(174, 3, 28, 0, '  By adjusting the file size of the exported animation '),
+(175, 3, 28, 0, ' By applying a motion effect to the animation'),
+(176, 3, 29, 1, 'Repeat mode '),
+(177, 3, 29, 0, 'Frame delay  '),
+(178, 3, 29, 0, 'Animation duration  '),
+(179, 3, 29, 0, 'Transition effect'),
+(180, 3, 30, 0, ' Brush tool '),
+(181, 3, 30, 0, 'Symbol Sprayer tool'),
+(182, 3, 30, 0, ' Blend tool '),
+(183, 3, 30, 1, 'Paintbrush tool'),
+(184, 4, 31, 1, ' .EPS '),
+(185, 4, 31, 0, ' .JPEG  '),
+(186, 4, 31, 0, '.PDF'),
+(187, 4, 31, 0, ' .TXT'),
+(188, 4, 32, 0, 'It allows you to preserve the original artwork without making any changes.'),
+(189, 4, 32, 0, 'It reduces the file size and improves compatibility with other software.'),
+(190, 4, 32, 1, 'It creates a reusable file with predefined settings and artwork for future use.'),
+(191, 4, 32, 0, 'It allows you to export the file for web use directly from Illustrator.'),
+(192, 4, 33, 0, ' .JPEG'),
+(193, 4, 33, 0, '  .GIF '),
+(194, 4, 33, 1, ' .PNG '),
+(195, 4, 33, 0, ' .TIFF'),
+(196, 4, 34, 1, ' .EPS'),
+(197, 4, 34, 0, ' .PDF '),
+(198, 4, 34, 0, ' .GIF '),
+(199, 4, 34, 0, ' .BMP'),
+(200, 4, 35, 0, 'Color mode  '),
+(201, 4, 35, 0, 'Resolution  '),
+(202, 4, 35, 0, 'Compression method '),
+(203, 4, 35, 1, 'All of the above'),
+(204, 4, 36, 0, '.JPEG '),
+(205, 4, 36, 0, '.PNG '),
+(206, 4, 36, 0, ' .PDF  '),
+(207, 4, 36, 1, '.TIFF'),
+(208, 4, 37, 0, 'Color mode  '),
+(209, 4, 37, 1, 'Compression  '),
+(210, 4, 37, 0, 'Resolution '),
+(211, 4, 37, 0, 'Transparency'),
+(212, 4, 38, 0, '  .EPS  '),
+(213, 4, 38, 0, '.PDF '),
+(214, 4, 38, 1, ' .JPEG  '),
+(215, 4, 38, 0, '.GIF'),
+(216, 4, 39, 1, ' Marks and Bleeds '),
+(217, 4, 39, 0, ' Compression '),
+(218, 4, 39, 0, 'Compatibility'),
+(219, 4, 39, 0, '  Security'),
+(220, 4, 40, 0, '.JPEG '),
+(221, 4, 40, 0, ' .GIF  '),
+(222, 4, 40, 1, '.PNG '),
+(223, 4, 40, 0, '.SVG'),
+(224, 5, 41, 0, 'Vector graphics creation'),
+(225, 5, 41, 1, 'Photo editing and manipulation '),
+(226, 5, 41, 0, 'Video editing  '),
+(227, 5, 41, 0, '3D modeling'),
+(228, 5, 42, 1, ' They have a smaller file size compared to vector graphics.'),
+(229, 5, 42, 0, 'They allow for unlimited scalability without loss of quality. '),
+(230, 5, 42, 0, ' They are better suited for creating logos and illustrations.'),
+(231, 5, 42, 0, ' They can only be created using specific drawing tablets.'),
+(232, 5, 43, 0, ' Pen tool '),
+(233, 5, 43, 0, ' Brush tool'),
+(234, 5, 43, 1, 'Crop tool'),
+(235, 5, 43, 0, 'Clone Stamp tool'),
+(236, 5, 44, 1, ' Layers panel '),
+(237, 5, 44, 0, 'Swatches panel '),
+(238, 5, 44, 0, ' Brushes panel'),
+(239, 5, 44, 0, 'Gradient panel'),
+(240, 5, 45, 0, ' To create and edit gradients and blends'),
+(241, 5, 45, 0, 'To apply various effects and filters to artwork '),
+(242, 5, 45, 1, ' To remove blemishes and imperfections in images '),
+(243, 5, 45, 0, ' To adjust the transparency and blending modes of objects'),
+(244, 5, 46, 1, ' .JPEG and .GIF '),
+(245, 5, 46, 0, ' .DOC and .TXT '),
+(246, 5, 46, 0, ' .PDF and .EPS '),
+(247, 5, 46, 0, ' .MP4 and .AVI'),
+(248, 5, 47, 0, 'Layers panel'),
+(249, 5, 47, 1, 'Adjustment layers '),
+(250, 5, 47, 0, ' Filters and effects  '),
+(251, 5, 47, 0, 'Brushes and brush presets'),
+(252, 5, 48, 1, 'To view and manage all the saved versions of your artwork '),
+(253, 5, 48, 0, 'To organize and manage your layers and layer groups '),
+(254, 5, 48, 0, 'To apply various artistic effects and styles to your artwork  '),
+(255, 5, 48, 0, 'To create and save custom brushes and patterns'),
+(256, 5, 49, 0, 'Blur tool '),
+(257, 5, 49, 0, 'Smudge tool  '),
+(258, 5, 49, 1, 'Dodge tool '),
+(259, 5, 49, 0, ' Magic Wand tool'),
+(260, 5, 50, 0, ' Save As '),
+(261, 5, 50, 1, ' Export As '),
+(262, 5, 50, 0, ' Export for Screens  '),
+(263, 5, 50, 0, 'Save for Web'),
+(264, 6, 41, 0, ' Pen tool'),
+(265, 6, 41, 0, 'Brush tool '),
+(266, 6, 41, 1, 'Shape tool '),
+(267, 6, 41, 0, 'Clone Stamp tool'),
+(268, 6, 52, 1, 'Layers panel'),
+(269, 6, 52, 0, 'Swatches panel'),
+(270, 6, 52, 0, 'Brushes panel'),
+(271, 6, 52, 0, 'Gradient panel'),
+(272, 6, 53, 0, '.JPEG '),
+(273, 6, 53, 0, ' .GIF '),
+(274, 6, 53, 1, '.PNG  '),
+(275, 6, 53, 0, '.TIFF'),
+(276, 6, 54, 0, ' Adjustment layers '),
+(277, 6, 54, 0, 'Layer styles '),
+(278, 6, 54, 0, ' Filters and effects '),
+(279, 6, 54, 1, ' Blending modes'),
+(280, 6, 55, 1, ' To create smooth and precise paths for vector shapes  '),
+(281, 6, 55, 0, 'To apply various artistic effects and styles to the logo'),
+(282, 6, 55, 0, '  To remove blemishes and imperfections in the logo design '),
+(283, 6, 55, 0, ' To retouch and enhance specific areas of the logo'),
+(284, 6, 56, 0, 'Image size '),
+(285, 6, 56, 0, 'Canvas size '),
+(286, 6, 56, 0, ' Transform tool '),
+(287, 6, 56, 1, ' Smart Objects'),
+(288, 6, 57, 0, 'Eraser tool '),
+(289, 6, 57, 1, 'Clone Stamp tool '),
+(290, 6, 57, 0, 'Brush tool '),
+(291, 6, 57, 0, 'Gradient tool'),
+(292, 6, 58, 0, 'Swatches panel '),
+(293, 6, 58, 0, ' Color panel '),
+(294, 6, 58, 0, ' Layers panel'),
+(295, 6, 58, 1, ' Adjustment panel'),
+(296, 6, 59, 0, 'Save As '),
+(297, 6, 59, 0, 'Export As '),
+(298, 6, 59, 1, 'Save for Web '),
+(299, 6, 59, 0, 'Export for Screens'),
+(300, 6, 60, 0, ' .JPEG'),
+(301, 6, 60, 0, '  .PDF '),
+(302, 6, 60, 0, ' .TIFF'),
+(303, 6, 60, 1, ' .EPS'),
+(304, 7, 61, 0, 'Pen tool '),
+(305, 7, 61, 0, 'Brush tool'),
+(306, 7, 61, 1, 'Crop tool '),
+(307, 7, 61, 0, 'Clone Stamp tool'),
+(308, 7, 62, 1, ' Layers panel '),
+(309, 7, 62, 0, ' Swatches panel'),
+(310, 7, 62, 0, 'Brushes panel'),
+(311, 7, 62, 0, ' Gradient panel'),
+(312, 7, 63, 0, ' .JPEG '),
+(313, 7, 63, 0, ' .GIF'),
+(314, 7, 63, 1, ' .PNG'),
+(315, 7, 63, 0, '  .TIFF'),
+(316, 7, 64, 1, ' Adjustment layers'),
+(317, 7, 64, 0, ' Layer styles '),
+(318, 7, 64, 0, 'Filters and effects '),
+(319, 7, 64, 0, 'Blending modes'),
+(320, 7, 65, 0, 'To create smooth and precise paths for vector shapes '),
+(321, 7, 65, 1, 'To remove blemishes and imperfections in the image'),
+(322, 7, 65, 0, ' To apply various artistic effects and styles to the image'),
+(323, 7, 65, 0, 'To retouch and enhance specific areas of the image'),
+(324, 7, 66, 0, 'Image size '),
+(325, 7, 66, 0, ' Canvas size '),
+(326, 7, 66, 0, ' Transform tool '),
+(327, 7, 66, 1, 'Smart Objects'),
+(328, 7, 67, 0, ' Eraser tool'),
+(329, 7, 67, 1, ' Clone Stamp tool '),
+(330, 7, 67, 0, 'Brush tool '),
+(331, 7, 67, 0, 'Gradient tool'),
+(332, 7, 68, 0, 'Swatches panel '),
+(333, 7, 68, 0, 'Color panel'),
+(334, 7, 68, 0, ' Layers panel '),
+(335, 7, 68, 1, 'Adjustment panel'),
+(336, 7, 69, 0, 'Save As '),
+(337, 7, 69, 0, 'Export As '),
+(338, 7, 69, 1, ' Save for Web '),
+(339, 7, 69, 0, 'Export for Screens'),
+(340, 7, 70, 0, '.JPEG '),
+(341, 7, 70, 0, ' .PDF '),
+(342, 7, 70, 1, '.TIFF '),
+(343, 7, 70, 0, ' .EPS'),
+(344, 8, 71, 0, ' Layers panel '),
+(345, 8, 71, 1, 'Timeline panel '),
+(346, 8, 71, 0, 'Brushes panel'),
+(347, 8, 71, 0, ' Swatches panel'),
+(348, 8, 72, 0, 'To adjust the color and tone of an image  '),
+(349, 8, 72, 0, 'To apply various filters and effects to an image'),
+(350, 8, 72, 1, ' To manage and control the timing of animations  '),
+(351, 8, 72, 0, 'To organize and arrange layers in an image'),
+(352, 8, 73, 0, '.JPEG  '),
+(353, 8, 73, 1, '.GIF '),
+(354, 8, 73, 0, ' .PNG'),
+(355, 8, 73, 0, ' .TIFF'),
+(356, 8, 74, 1, 'Frame Animation '),
+(357, 8, 74, 0, 'Video Timeline '),
+(358, 8, 74, 0, 'Smart Objects '),
+(359, 8, 74, 0, 'Adjustment Layers'),
+(360, 8, 75, 0, 'To apply a semi-transparent effect to an animation  '),
+(361, 8, 75, 0, 'To preview the animation with different blending modes'),
+(362, 8, 75, 1, 'To display previous and next frames as reference while creating animations '),
+(363, 8, 75, 0, 'To export the animation with multiple layers'),
+(364, 8, 76, 0, 'Brush tool '),
+(365, 8, 76, 0, 'Clone Stamp tool '),
+(366, 8, 76, 1, 'Pencil tool '),
+(367, 8, 76, 0, ' Eraser tool'),
+(368, 8, 77, 1, '  Frame Delay '),
+(369, 8, 77, 0, ' Frame Rate '),
+(370, 8, 77, 0, 'Transition Effect '),
+(371, 8, 77, 0, 'Layer Opacity'),
+(372, 8, 78, 1, 'Layers panel '),
+(373, 8, 78, 0, 'Timeline panel '),
+(374, 8, 78, 0, 'Swatches panel '),
+(375, 8, 78, 0, ' Adjustment panel'),
+(376, 8, 79, 1, 'To optimize and export animations for web use'),
+(377, 8, 79, 0, '  To save animations as high-resolution image files'),
+(378, 8, 79, 0, ' To apply filters and effects to animations '),
+(379, 8, 79, 0, ' To preview animations before exporting'),
+(380, 8, 80, 0, '.JPEG  '),
+(381, 8, 80, 1, '.GIF  '),
+(382, 8, 80, 0, '.TIFF  '),
+(383, 8, 80, 0, '.EPS'),
+(384, 9, 81, 0, '.JPEG '),
+(385, 9, 81, 0, '.GIF '),
+(386, 9, 81, 0, ' .PNG '),
+(387, 9, 81, 1, '.TIFF'),
+(388, 9, 82, 0, ' To save changes to the existing file '),
+(389, 9, 82, 1, 'To create a new copy of the file with a different name or format  '),
+(390, 9, 82, 0, 'To export the image for web use '),
+(391, 9, 82, 0, ' To save the image with reduced file size'),
+(392, 9, 83, 1, 'Save As '),
+(393, 9, 83, 0, ' Save for Web'),
+(394, 9, 83, 0, 'Export As '),
+(395, 9, 83, 0, 'Quick Export as PNG'),
+(396, 9, 84, 0, ' .JPEG'),
+(397, 9, 84, 1, '.GIF '),
+(398, 9, 84, 0, '.BMP '),
+(399, 9, 84, 0, '.TIFF'),
+(400, 9, 85, 0, 'Save As'),
+(401, 9, 85, 1, ' Save for Web'),
+(402, 9, 85, 0, 'Export As'),
+(403, 9, 85, 0, ' Quick Export as PNG'),
+(404, 9, 86, 1, 'To save images for web use with optimized file size and format'),
+(405, 9, 86, 0, 'To save images with high resolution for print purposes '),
+(406, 9, 86, 0, ' To save images with multiple layers intact  '),
+(407, 9, 86, 0, 'To save images with specific color profiles'),
+(408, 9, 87, 0, '.JPEG'),
+(409, 9, 87, 1, ' .GIF'),
+(410, 9, 87, 0, ' .PNG '),
+(411, 9, 87, 0, ' .TIFF'),
+(412, 9, 88, 0, 'To save images with specific color profiles  '),
+(413, 9, 88, 0, 'To save images with reduced file size '),
+(414, 9, 88, 1, 'To export images for web use with optimized settings  '),
+(415, 9, 88, 0, 'To save images with multiple layers intact'),
+(416, 9, 89, 0, 'Save As '),
+(417, 9, 89, 0, 'Save for Web '),
+(418, 9, 89, 0, 'Export As '),
+(419, 9, 89, 1, 'Quick Export as PNG'),
+(420, 9, 90, 0, '.JPEG'),
+(421, 9, 90, 0, '  .GIF '),
+(422, 9, 90, 1, ' .PSD '),
+(423, 9, 90, 0, ' .TIFF'),
+(424, 6, 51, 1, 'Pen tool'),
+(425, 6, 51, 0, 'Eraser tool\r\n'),
+(426, 6, 51, 0, 'Pencil tool\r\n'),
+(427, 6, 51, 0, 'Brush tool\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz`
+--
+
+CREATE TABLE `quiz` (
+  `quizID` int(11) NOT NULL,
+  `quesID` int(15) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quiz`
+--
+
+INSERT INTO `quiz` (`quizID`, `quesID`, `text`) VALUES
+(1, 1, 'Adobe Illustrator\'s 1st version was released in'),
+(1, 2, 'Our artwork can be viewed in a maximized window with no title bar, a menu bar at the top, and a scroll bar on the side when we use'),
+(1, 3, 'In vector graphics, mathematical objects are used to define ____ .'),
+(1, 4, 'How many types of anchor points are there in the path?'),
+(1, 5, 'Developed in 1987 by Adobe Corporation, Adobe Illustrator is one of the most popular and well-known ____ graphics applications available'),
+(1, 6, 'Adobe Illustrator requires which of the following minimum system requirement(s) to be installed on Windows:'),
+(1, 7, 'What is Adobe Illustrator primarily used for?'),
+(1, 8, 'Which of the following is a primary advantage of working with vector graphics in Illustrator?'),
+(1, 9, 'Which file formats are commonly supported for importing into Illustrator?\r\n'),
+(1, 10, 'Which tool in Illustrator allows you to apply different colors and gradients to artwork?'),
+(2, 11, 'To open the preferences dialog box, use the shortcut key -'),
+(2, 12, ' Which tool in Adobe Illustrator is commonly used for creating logos?'),
+(2, 13, 'Which of the following is a key principle in logo design?'),
+(2, 14, 'What is the purpose of creating a logo in vector format'),
+(2, 15, 'What file format is commonly used for saving logos created in Illustrator?'),
+(2, 16, 'Which panel in illustrator allows you to manage and organize all the elements of your logo design?'),
+(2, 17, 'Which color mode is commonly used for logo design intended for print?'),
+(2, 18, 'Which option allows you to create precise and symmetrical shapes in Illustrator for logo design?'),
+(2, 19, 'What is the purpose of creating logo variations in Illustrator?'),
+(2, 20, 'Which option allows you to apply different colors and gradients to specific parts of a logo design?'),
+(3, 21, 'Which feature in Adobe Illustrator allows you to create animations?'),
+(3, 22, 'Which panel in Illustrator allows you to control the timing and sequencing of animation frames? '),
+(3, 23, 'Which tool is commonly used to create motion paths for objects in Illustrator? '),
+(3, 24, 'In the Animation Timeline panel, what is a keyframe? '),
+(3, 25, 'Which file format supports exporting animations created in Adobe Illustrator?  '),
+(3, 26, 'Which option in the Animation Timeline panel allows you to control the duration of a keyframe? '),
+(3, 27, 'Which feature in Illustrator allows you to preview your animation before exporting it?'),
+(3, 28, 'How can you adjust the playback speed of an animation in Illustrator? '),
+(3, 29, 'Which option allows you to create a looping animation in Adobe Illustrator? '),
+(3, 30, 'Which tool in Illustrator allows you to create frame-by-frame animations?'),
+(4, 31, 'Which file format is commonly used for saving Illustrator files? '),
+(4, 32, 'What is the purpose of saving a file as an Illustrator Template (.AIT)? '),
+(4, 33, 'Which file format supports saving vector-based graphics with transparency in Illustrator?'),
+(4, 34, 'Which file format is commonly used for sharing Illustrator files with other designers or printers? '),
+(4, 35, 'When saving an Illustrator file as a .PDF, what additional options can be selected? '),
+(4, 36, 'Which file format is suitable for saving high-quality, print-ready illustrations in Illustrator? '),
+(4, 37, 'When saving an Illustrator file as a .JPEG, what option allows you to control the image quality? '),
+(4, 38, 'Which file format should you use to save an Illustrator file for use in a Microsoft Word document?'),
+(4, 39, 'Which option allows you to include bleed and crop marks when saving an Illustrator file as a .PDF?'),
+(4, 40, 'Which file format should you use when saving an Illustrator file for use on a website? '),
+(5, 41, 'What is Adobe Photoshop primarily used for? '),
+(5, 42, 'Which of the following is a primary advantage of working with raster graphics in Photoshop? '),
+(5, 43, 'Which tool in Photoshop is commonly used for making selections and cropping images? '),
+(5, 44, 'Which panel in Photoshop allows you to manage and organize all the layers of your artwork?'),
+(5, 45, 'What is the purpose of the Healing Brush tool in Photoshop? '),
+(5, 46, 'Which file formats are commonly supported for importing into Photoshop?'),
+(5, 47, 'Which feature in Photoshop allows you to adjust the color, contrast, and tonal balance of an image? '),
+(5, 48, 'What is the purpose of the History panel in Photoshop? '),
+(5, 49, 'Which tool in Photoshop allows you to retouch and enhance specific areas of an image? '),
+(5, 50, 'Which option allows you to export your Photoshop artwork as a high-resolution image file?'),
+(6, 51, 'Which tool in Photoshop is commonly used for creating and editing shapes for logo design? '),
+(6, 52, 'Which panel in Photoshop allows you to manage and organize all the elements of your logo design? '),
+(6, 53, 'Which file format is commonly used for saving a logo design with transparency in Photoshop? '),
+(6, 54, 'Which option allows you to apply different colors and gradients to specific parts of a logo design in Photoshop? '),
+(6, 55, 'What is the purpose of the Pen tool in Photoshop for logo design? '),
+(6, 56, 'Which option allows you to resize a logo design without losing quality in Photoshop? '),
+(6, 57, 'Which tool in Photoshop allows you to remove unwanted objects or blemishes from a logo design? '),
+(6, 58, 'Which panel in Photoshop allows you to adjust the color and tone of a logo design?'),
+(6, 59, 'Which option allows you to export your logo design from Photoshop for use on a website?'),
+(6, 60, 'Which file format should you use when saving a logo design with transparency for print purposes? '),
+(7, 61, 'Which tool in Photoshop is commonly used for making precise selections and cropping images? '),
+(7, 62, 'Which panel in Photoshop allows you to manage and organize all the layers of your edited image? '),
+(7, 63, 'Which file format supports saving images with transparency in Photoshop?'),
+(7, 64, 'Which option in Photoshop allows you to adjust the color and tone of an image? '),
+(7, 65, 'What is the purpose of the Healing Brush tool in Photoshop? '),
+(7, 66, 'Which option in Photoshop allows you to resize an image without losing quality?'),
+(7, 67, 'Which tool in Photoshop allows you to remove unwanted objects or blemishes from an image? '),
+(7, 68, 'Which panel in Photoshop allows you to adjust the color and tone of an image? '),
+(7, 69, 'Which option allows you to export your edited image from Photoshop for use on a website? '),
+(7, 70, 'Which file format should you use when saving an edited image for print purposes? '),
+(8, 71, 'Which panel in Photoshop allows you to create and manage animations? '),
+(8, 72, 'What is the purpose of the Timeline panel in Photoshop? '),
+(8, 73, 'Which file format is commonly used for exporting animations from Photoshop? '),
+(8, 74, 'Which option allows you to create frame-by-frame animations in Photoshop? '),
+(8, 75, 'What is the purpose of the Onion Skin feature in Photoshop Timeline panel? '),
+(8, 76, 'Which tool in Photoshop allows you to create and edit animation frames? '),
+(8, 77, 'Which option allows you to adjust the playback speed of an animation in Photoshop?'),
+(8, 78, 'Which panel in Photoshop allows you to control the opacity and blending modes of animation frames? '),
+(8, 79, 'What is the purpose of the Save for Web option in Photoshop for animations?  '),
+(8, 80, 'Which file format is commonly used for saving animated logos in Photoshop? '),
+(9, 81, 'Which file format is commonly used for saving images with high-quality and lossless compression in Photoshop?'),
+(9, 82, 'What is the purpose of the Save As option in Photoshop? '),
+(9, 83, 'Which option allows you to save an image with layers intact in Photoshop? '),
+(9, 84, 'Which file format supports transparency in Photoshop? '),
+(9, 85, 'Which option allows you to save an image in Photoshop with a reduced file size while maintaining image quality? '),
+(9, 86, 'What is the purpose of the Save for Web option in Photoshop? '),
+(9, 87, 'Which file format is commonly used for saving images with animation in Photoshop? '),
+(9, 88, 'What is the purpose of the Quick Export option in Photoshop? '),
+(9, 89, 'Which option allows you to save an image with a transparent background in Photoshop? '),
+(9, 90, 'Which file format should you use when saving an image with layers and editable text in Photoshop?');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quizzes`
+--
+
+CREATE TABLE `quizzes` (
+  `quizID` int(11) NOT NULL,
+  `quizname` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `quizzes`
+--
+
+INSERT INTO `quizzes` (`quizID`, `quizname`) VALUES
+(1, 'Introduction to Adobe Illustrator'),
+(2, 'Logo Designing in Adobe Illustrator'),
+(3, 'Animations in Adobe Illustrator'),
+(4, 'Saving Option in Adobe Illustrator'),
+(5, 'Introduction to Adobe Photoshop'),
+(6, 'Logo Designing in Adobe Photoshop'),
+(7, 'Photo Editing in Adobe Photoshop'),
+(8, 'Animations in Adobe Photoshop'),
+(9, 'Saving Option in Adobe Photoshop');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result`
+--
+
+CREATE TABLE `result` (
+  `scoreID` int(3) NOT NULL,
+  `score` int(15) NOT NULL,
+  `progress` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `result`
+--
+
+INSERT INTO `result` (`scoreID`, `score`, `progress`) VALUES
+(1, 5, 10),
+(2, 4, 10),
+(3, 15, 10),
+(4, 9, 10),
+(5, 0, 0),
+(6, 0, 0),
+(7, 0, 10),
+(8, 0, 10),
+(9, 0, 10),
+(10, 8, 10);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `choices`
+--
+ALTER TABLE `choices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `quiz`
+--
+ALTER TABLE `quiz`
+  ADD PRIMARY KEY (`quesID`);
+
+--
+-- Indexes for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  ADD PRIMARY KEY (`quizID`);
+
+--
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`scoreID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `choices`
+--
+ALTER TABLE `choices`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=428;
+
+--
+-- AUTO_INCREMENT for table `quizzes`
+--
+ALTER TABLE `quizzes`
+  MODIFY `quizID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `result`
+--
+ALTER TABLE `result`
+  MODIFY `scoreID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
