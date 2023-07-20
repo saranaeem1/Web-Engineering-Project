@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/6c526894c6.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+      <title>INTRODUCTION TO TOOLS</title>
+      
+        <style>
+                        /* **********************MEDIA QUERY************** */
+
+@media only screen and (max-width:768px){
+  body{
+    max-width: 100%;
+    height:auto;
+    overflow-x:hidden;
+  }
+.blog_main_para{
+  word-wrap: break-word;
+  max-width: 350px;
+
+}
+.flexbox_main{
+  display:flex;
+  flex-direction: column;
+}
+.flexbox1 p{
+  word-wrap: break-word;
+  max-width: 350px;
+}
+.blogsgallery{
+margin:20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  overflow-x:hidden;
+}
+.blogs img{
+  width: 150px;height:150px;
+}
+iframe{
+width:200px;
+  height:auto;
+  overflow:clip;
+}
+.heading{
+    font-size:14;
+}
+}
+   /* **********************************FLEX BOXES******************************************** */
+
+iframe{
+  width:560px;
+  height:315px;
+  overflow: clip;
+}
+            * ************************************************NAVBAR AND SIDEBAR********************************************** */
+     {@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Home Page */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: black;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+nav .navigation ul li a:hover {
+    color: lightgray;
+}
+
+nav .openbtn {
+    font-size: 1.7rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-left: -50%;
+    position: relative;
+    padding: 10px 10px;
+    border: none;
+}
+
+nav .openbtn:hover {
+
+    color: rgb(140, 221, 241);
+}
+
+.toggle_btn {
+    color: white;
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dropdown_menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu ul li a {
+    text-decoration: none;
+    color: #3b97e3;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+/* Media query for responsive navbar */
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+        left: 2rem;
+        width: unset;
+    }
+
+    nav .openbtn {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: -1%;
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.19)0px 10px 20px, rgba(0, 0, 0, 0.23)0px 6px 6px;
+}
+
+
+.sidebar a {
+    padding: 8px 8px 4px 26px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar i {
+    padding: 5px;
+}
+
+.sidebar a:hover {
+    color: rgb(140, 221, 241);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.pic {
+  margin-bottom:10px ;
+    width: 85%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightpink;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    /* box-shadow: rgba(0,0,0,0.19)0px 10px 20px,rgba(0,0,0,0.23)0px 6px 6px; */
+}
+
+.pic img {
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+.announce h4 {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.pic p {
+    font-size: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 50;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pic button {
+    padding: 5px 5px;
+    width: 100px;
+    background-color: #ec0d66;
+    color: #fff;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+        /* margin-top: 20%; */
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .pic {
+        max-width: 50%;
+    }
+
+
+  }
+            /* **********************FLEX BOXES************** */
+
+
+
+.heading{
+    margin:auto;
+    margin-top: 40px;
+    position: relative;
+    text-align: center;
+    background: rgba(248, 248, 248, 0.002);
+}
+
+
+    
+    
+.flexbox1{
+    width:500px;
+margin-right:160px;
+}
+.heading2{
+    color: hsla(0, 0%, 1%, 0.773);
+    margin-left: 35px;
+    padding-top:10px;}
+
+p{
+    margin-top:15px ;
+    margin-left: 35px;
+    word-wrap:break-word;
+    text-align: justify;
+}
+.flexbox_main{
+display: flex;
+}
+.flexbox2{
+    margin-top: 50px;
+}
+.move{
+    width:470px;
+    padding-left:30px;
+
+}
+#pen{
+    height:300px;
+    padding-top: 30px;
+}
+    
+    
+    
+    /* ********************************PROJECT COURSE PART**************************************** */
+
+    .mainbtn{
+  margin-top: -10px;
+  padding-top: 20px;
+  padding-bottom:30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:auto;
+  flex-wrap:wrap;
+  height:auto;
+}
+#btn2blog{
+   
+    background-color: hsla(0, 0%, 100%, 0);
+  color: rgb(255, 255, 255);
+  border-color: #ffffff;
+  transition: width 2s;
+}    
+.blog_button{padding: 10px 20px;
+        background: #3ecde3;
+        color: white;
+        
+      border-color: #fdfdfd;
+       
+        align-items: center;
+        margin-right: 10px;
+      border-style:double;
+      border-radius: 0px;
+      cursor: pointer;
+    }
+    .ps{
+        margin:10px;
+        text-align: center;
+        padding-top: 60px;
+        color: rgb(249, 249, 249);
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 2px 2px #080707, 2px 2px #000000, 3px 2px #0b0b0b;
+      
+    }
+    #btn2blog:hover{
+    width:100px;
+      background-color: hsl(0, 0%, 100%);
+      color: rgb(26, 99, 99);
+      border-color: #49c9e9;
+    }
+    .blog_button:hover{
+        background-color: hsl(209, 90%, 58%);
+      color: rgb(248, 249, 249);
+      border-color: #f8f8f8;
+      
+       
+      
+        
+    }
+    .blog_main_para{
+  margin:auto;
+  text-align: center;
+  word-wrap: break-word;
+    width:700px;
+    color:white;
+    }
+    .desc a{
+  text-decoration: none;
+  color:black;
+}
+.desc a:hover{
+  color:black;
+}
+.desc a:visited{
+  color:#0a0a0a;
+}
+
+    
+    
+    
+    .blog{
+        width:100%;
+        
+    }
+    .blog_main{
+margin-top:-10px;
+height:auto;
+background: linear-gradient(-45deg, #52e1ee, #3c7be7, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+
+    }
+    
+.flex_para:hover{
+    font-weight: bold;
+
+}
+/* ************************INTRO TO TOOLS************************ */
+.heading span{
+    
+    position: relative;
+  display: inline-block;
+  color: #15bfe5;
+  font-size: 50px;
+  font-style: italic;
+  font: 700 normal;
+  text-shadow: 0 0 10px #a8e7f4, 0 0 20px hsl(183, 76%, 80%), 0 0 30px #a1eef4, 0 0 40px #a6f0f8, 0 0 70px #a8ecf1, 0 0 80px #b0f0f5, 0 0 100px #96edf4;
+  background-color: #3db2e400;
+  animation: neonAnimation 1.5s ease-in-out infinite alternate;
+
+  
+ 
+
+  animation-delay: calc(.2s * var(--i));
+justify-content: center;
+opacity: 0;
+  filter: blur(4px);
+  padding:10px;
+align-items: center;transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);}
+
+@keyframes  scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+/* ********************************OTHER BLOGS******************************* */
+.blogsheading{
+    text-align: center;
+}
+.blogsgallery{
+  display:flex;
+  flex-direction: row;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.blogs {
+margin:10px;
+  border: 1px solid #0fc1d8;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height:auto;
+  transition: top 0.3s;
+  position:relative;
+}
+
+
+
+div.blogs:hover {
+  top: 10px;
+  border: 1px solid #14f7ff; /* Adjust the value to control the distance of the movement */
+}
+
+
+div.blogs img {
+  width: 200px;
+  height: 250px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.desc:hover{
+    font-weight: bold;
+}
+/* ********************************FOOTER**************************************** */
+
+footer {
+  background-color: #24262d;
+  padding: 50px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: center; 
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.footer-column p{
+  margin-left:0px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #bbb;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-media li a:hover {
+  color: #bbb;
+}
+
+.footer-bottom {
+  background-color:#797878;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+
+}
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-container {
+    justify-content: space-around; 
+  }
+
+  .footer-column {
+    width: 33.33%;
+    text-align: left; 
+  }
+
+}
+
+@media (min-width: 992px) {
+  .footer-column {
+    width: 25%;
+  }
+
+}
+    </style>
+
+
+</head>
+
+<body>
+     <!--***********************************************NAVBAR AND SIDEBAR*************************************************************************-->
+  <nav>
+    <img src="questionnaire (1) (1).png" alt="logo">
+    <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+    <div class="navigation">
+
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+    <!--For responsive navbar-->
+    <div class="toggle_btn"><i class="fas fa-bars"></i></div>
+    <div class="dropdown_menu">
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- side bar -->
+<div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <a href="photoshop.html">Photoshop Home Page</a>
+    <a href="photoediting.html">Photo Editing</a>
+    <a href="pslogodesigning.html">Logo Designing</a>
+    <a href="animations.html">Animations</a>
+    <a href="savingps.html">Saving Options</a>
+    <div class="announce">
+        <h4>New Announcement</h4>
+    </div>
+
+    <div class="pic">
+
+        <img src="Add a heading(7).jpeg" alt="">
+        <p>Attention all graphic designers and creative enthusiasts!
+            We are thrilled to unveil our brand new graphic course, designed to
+            equip you with the skills.Get ready to unlock your creative potential
+            and embark on a transformative learning journey.</p>
+        <button>Learn more</button>
+    </div>
+</div>
+
+<script>
+    const openSidebar = () => {
+        document.getElementById("mySidebar").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "150px";
+    };
+
+    const closeSidebar = () => {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    };
+
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+    toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open');
+        const isOpen = dropdownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    };
+
+</script>
+    <!--***************************MAIN PART******************--> 
+    <div class="blog1">
+    
+        <div class="blog_main">
+            
+            <h1 class="ps">Introduction to Photoshop Tools</h1>
+            <p class="blog_main_para">Photoshop is an incredibly powerful tool that can transform
+                 ordinary images into stunning works of art.Whether you're a graphic designer,
+                  photographer, or simply someone with a passion for digital art, mastering 
+                   opens up a world of endless creative possibilities. In this blog post, 
+                   we'll explore some exciting ideas 
+                  an advanced Photoshop course that will take your skills to the next level.</p>
+                  <div class="mainbtn"><button class="blog_button"id="btn2blog">Home</button>
+                    <button  onclick="window.location.href='index4.php';"class="blog_button">Take Quiz</button></div>
+            
+        </div>
+<!--***************************INTRO TO TOOLS******************--> 
+        <div class="Intro_to_tools">
+            <div class="heading">
+                <span style="--i:1">"Design</span>
+                <span style="--i:2">is</span>
+                <span style="--i:3">thinking</span>
+                <span style="--i:4">made </span>
+                <span style="--i:5">visual"</span>
+                
+            </div>
+            
+        
+            
+            <h1 class="heading2">Move Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Move Tool in Photoshop is used to move and reposition layers, selections, and objects within your canvas. Here is a summary of how to use the Move Tool:
+    
+                            Select the Move Tool:
+                            In the Photoshop toolbar, click on the Move Tool icon. It is represented by a pointer with a four-sided arrowhead.
+                            
+                            Select the layer or object you want to move:
+                            In the Layers panel, click on the layer you want to move, or create a selection around the object you want to move.
+                            
+                            Click and drag to move:
+                            Click on the layer or selection, then drag it to the desired position within the canvas. As you drag, you will see a preview of the movement.
+                            
+                            Use keyboard arrow keys for precise movement:
+                            To move the layer or selection in small increments, you can use the arrow keys on your keyboard. Each arrow key press moves the layer by one pixel or by a specified amount if you hold down the Shift key.
+                            
+                            Enable Auto-Select and Show Transform Controls (optional):
+                            In the options bar at the top of the screen, you can enable the "Auto-Select" checkbox to automatically select layers by clicking on them in the canvas. Additionally, enabling "Show Transform Controls" will display resizing handles around the selected layer or object, allowing you to scale or rotate it while moving.
+                            
+                            Align and distribute objects (optional):
+                            To align or distribute multiple layers or objects precisely, you can use the alignment and distribution options available in the options bar or the Edit menu.
+                            
+                            Apply the movement:
+                            Once you have positioned the layer or object as desired, release the mouse button to apply the movement.</p>
+
+    
+                    </div>
+                   
+                    <div class="flexbox2">
+                        
+<iframe  src="https://www.youtube.com/embed/INbfRtcMDm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+                    <h1 class="heading2">Pen Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Pen Tool in Photoshop is a powerful tool used for creating and editing precise paths and shapes. It allows you to create smooth curves, straight lines, and complex selections. Here are some common uses of the Pen Tool in Photoshop:
+    
+                            Creating custom shapes and logos:
+                            The Pen Tool enables you to create custom shapes and logos by defining anchor points and manipulating Bezier handles to create smooth curves and straight lines. It provides precise control over the shape and allows you to design unique graphics.
+                            
+                            Making selections:
+                            The Pen Tool can be used to create complex selections, particularly when dealing with subjects with intricate or irregular outlines. By carefully tracing the edges of an object using anchor points, you can create a selection path that accurately follows the object's shape.
+                            
+                            Clipping paths and image cutouts:
+                            The Pen Tool is useful for creating clipping paths or cutting out objects from their backgrounds. You can carefully trace around the object using the Pen Tool, creating a path that defines the area to be retained while removing the background.
+                            
+                            Editing existing paths:
+                            The Pen Tool allows you to select and modify existing paths. You can add or remove anchor points, adjust the position of anchor points and handles, and reshape curves to refine or reshape a path.
+                            
+                            Creating masks and layer effects:
+                            By creating a path with the Pen Tool and converting it into a selection, you can create layer masks to control the visibility of specific areas in an image. Paths can also be used to create layer effects such as strokes or drop shadows.
+                            
+                            Drawing and illustrating:
+                            The Pen Tool can be used for freehand drawing and illustrating. By creating a series of anchor points and adjusting their handles, you can create smooth, flowing lines and curves to create intricate illustrations or artwork..</p>
+    
+                    </div>
+                    <div class="flexbox2">
+                        <iframe " height="315" src="https://www.youtube.com/embed/cNsKMgDQiLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Text Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Text Tool in Photoshop allows you to add and manipulate text within your designs. With this tool, you can create headlines, paragraphs, captions, and more. Here's an overview of how to use the Text Tool in Photoshop:
+    
+                            Select the Text Tool:
+                            In the Photoshop toolbar, click on the "T" icon or press the "T" key on your keyboard to select the Text Tool.
+                            
+                            Choose your text settings:
+                            In the options bar at the top of the screen, you can customize various text settings, including font, font size, font style, alignment, and color. You can also choose to create a new text layer or edit an existing one.
+                            
+                            Click on the canvas:
+                            Position your cursor where you want the text to start, then click on the canvas to create a text insertion point.
+                            
+                            Type your text:
+                            Start typing your desired text. The text will appear on the canvas, and as you type, it will automatically wrap to the next line if it exceeds the width of the text box.
+                            
+                            Edit and format the text:
+                            After typing your text, you can still make changes. Use the options bar or the Character panel to adjust the font, size, color, leading (line spacing), and other text formatting options. You can also use the Move Tool to reposition the text box.
+                            
+                            Transform and warp the text (optional):
+                            To further manipulate the text, you can use the Transform options to scale, rotate, skew, or distort the text. Additionally, the Warp Text option allows you to apply various text distortions or text effects.
+                            
+                            Apply layer styles and effects (optional):
+                            You can enhance the appearance of your text by applying layer styles such as drop shadows, gradients, strokes, or bevels. These effects can be accessed in the Layer Styles panel or the menu at the bottom of the Layers panel.
+                            
+                            Edit and reformat the text:
+                            To make changes to your text, simply select the Text Tool again, click inside the text box, and modify the text or formatting as needed.
+                            
+                            </p>
+    
+                    </div>
+                    <div class="flexbox2">
+                        <iframe " height="315" src="https://www.youtube.com/embed/ap4lj7FBIh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Lasso Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Lasso Tool in Photoshop is a selection tool that allows you to make freehand selections by drawing around an object or area of an image. Here's a brief summary of the Lasso Tool:
+    
+                            Precise selections: The Lasso Tool enables you to create detailed selections by drawing freehand around the edges of an object or specific areas within an image. It provides flexibility and control for selecting irregularly shaped objects or intricate parts of an image.
+                            
+                            Multiple variations: Photoshop offers three variations of the Lasso Tool: the Standard Lasso Tool, the Polygonal Lasso Tool, and the Magnetic Lasso Tool. Each variation has its unique features and is suitable for different selection scenarios, providing options to suit your specific needs.
+                            
+                            Fine-tuning and editing: Once a selection is made with the Lasso Tool, you can refine and edit it using options like Feather, Refine Edge, or Layer Masks. These additional tools and techniques allow for seamless integration of the selected area into your overall design or image composition.
+                            </p>
+    
+                    </div>
+                    <div class="flexbox2">
+                        <iframe " height="315" src="https://www.youtube.com/embed/Bw0Kkbjoo7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Object Selection Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Object Selection Tool in Photoshop is a powerful tool that automates the process of selecting objects within an image. Here's a brief summary of the Object Selection Tool:
+    
+                            Automated object selection: The Object Selection Tool uses Adobe Sensei, an advanced machine learning technology, to automatically detect and select objects within an image. It intelligently analyzes the image and identifies objects based on their visual characteristics.
+                            
+                            Quick and intuitive selection: With a simple click-and-drag motion, the Object Selection Tool creates a selection around the detected object. It saves you time and effort compared to manual selection techniques, especially when dealing with complex or detailed objects.
+                            
+                            Refinement and adjustment: After making the initial selection, you can further refine and adjust it using tools like the Select and Mask workspace or the Refine Edge Brush. These options allow for fine-tuning and enhancing the selection edges to achieve more precise results.
+                            
+                            Multiple selection modes: The Object Selection Tool offers different selection modes, including Rectangle, Lasso, and Magic Wand. You can choose the most suitable mode based on the object's shape and complexity, giving you more flexibility and control over the selection process.
+                            </p>
+                    </div>
+                    <div class="flexbox2">
+                        <iframe src="https://www.youtube.com/embed/KyUqVF4hsjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                    <h1 class="heading2">Clone Stamp Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">Select the Clone Stamp Tool:
+                            In the Photoshop toolbar, click on the Clone Stamp Tool icon or press "S" on your keyboard to select it.
+                            
+                            Set the sampling source:
+                            Before using the tool, set the sampling source. This defines the area from which the pixels will be copied. You can do this by Alt-clicking (Option-clicking on Mac) on the desired source area.
+                            
+                            Adjust brush settings:
+                            In the options bar at the top of the screen, you can adjust the brush settings such as size, hardness, and opacity. This allows you to control the size and blending of the cloned pixels.
+                            
+                            Clone the pixels:
+                            Position the cursor over the area where you want to clone the pixels, and click to start cloning. As you paint, the pixels from the sampling source will be duplicated to the cloned area.
+                            
+                            Blend and repeat:
+                            To achieve a seamless blend, release the mouse button periodically while cloning to avoid repetitive patterns. Adjust the sampling source as needed to maintain a natural appearance.
+                            
+                            Use different brush modes:
+                            Experiment with different brush modes, such as Normal, Multiply, Screen, or Overlay, to achieve different blending effects when cloning.
+                            
+                            Clone from different layers:
+                            The Clone Stamp Tool can clone pixels from the same layer or different layers, giving you the flexibility to clone from multiple sources or work non-destructively.
+                            
+                            Clone for retouching and editing:
+                            The Clone Stamp Tool is commonly used for retouching tasks like removing blemishes, scratches, or unwanted objects from images. It can also be used for creative purposes like adding texture or duplicating elements.
+    </p>
+                    </div>
+                    <div class="flexbox2">
+                        <iframe src="https://www.youtube.com/embed/LmmrtQsDGvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </li>
+            </ol>
+        </div>
+        </li>
+    
+                </div>
+                
+            
+            
+
+</div>
+<h1 class="blogsheading">LEARN MORE </h1>
+<div class="blogsgallery">
+    
+    <div class="blogs">
+        <img src="pi 14.jpg" alt="Mountains" >
+      
+      <div class="desc"><a href="pslogodesigning.html">Logo Designing</a></div>
+    </div>
+<div class="blogs">
+    <img src="pic 14.jpg" alt="Cinque Terre">
+
+  <div class="desc"><a href="photoediting.html">Photo Editing</a></div>
+</div>
+
+<div class="blogs">
+    <img src="pic 15.jfif" alt="Forest">
+  
+  <div class="desc"><a href="animations.html">Animations</a></div>
+</div>
+
+<div class="blogs">
+    <img src="pic 16.jpg"Northern Lights">
+  
+  <div class="desc"><a href="Saving Options">Saving Options</a></div>
+</div>
+</div>
+    
+  <!--********************************FOOTER**************************************** -->
+<footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="final.html#instructor">Instructors</a></li>
+          <li><a href="help.php">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <ul class="social-media">
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Questionaire Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+    </body>
+</html>

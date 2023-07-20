@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e2d8a67779.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="final.css" type="text/css"></link>
+    <title>Questionaire</title>
+</head>
+
+<body>
+
+    <!--Navbar-->
+
+    <nav>
+        <img src="questionnaire (1) (1).png" alt="logo">
+        <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+        <div class="navigation">
+    
+            <ul>
+              <li><a href="final.html">Home</a></li>
+              <li><a href="final.html#courses">Courses</a></li>
+              <li><a href="feedback.php">Feedback</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="Signup.php">Signup</a></li>
+              <li><a href="Login.php">Login</a></li>
+            </ul>
+        </div>
+        <!--For responsive navbar-->
+        <div class="toggle_btn"><i class="fas fa-bars"></i></div>
+        <div class="dropdown_menu">
+            <ul>
+              <li><a href="final.html">Home</a></li>
+              <li><a href="final.html#courses">Courses</a></li>
+              <li><a href="feedback.php">Feedback</a></li>
+              <li><a href="Signup.php">Signup</a></li>
+              <li><a href="Login.php">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- side bar -->
+    <div id="mySidebar" class="sidebar">
+    
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    
+        
+    <a href="profile.html"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="feedback.php"><i class="fa-solid fa-comment"></i>Feedback</a>
+    <a href="help.php"><i class="fa-solid fa-comment"></i>Contact Us</a>
+    <a href="faq.html"><i class="fa-solid fa-question"></i>FAQ</a>
+    <a href="designprinciples.html"><i class="fa-solid fa-laptop"></i>Blog</a>
+        <div class="announce">
+            <h4>New Announcement</h4>
+        </div>
+    
+        <div class="pic">
+    
+            <img src="Add a heading(7).jpeg" alt="">
+            <p>Attention all graphic designers and creative enthusiasts!
+                We are thrilled to unveil our brand new graphic course, designed to
+                equip you with the skills.Get ready to unlock your creative potential
+                and embark on a transformative learning journey.</p>
+            <button>Learn more</button>
+        </div>
+    </div>
+    
+    <script>
+        const openSidebar = () => {
+            document.getElementById("mySidebar").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "150px";
+        };
+    
+        const closeSidebar = () => {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        };
+    
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropdownMenu = document.querySelector('.dropdown_menu');
+        toggleBtn.onclick = function () {
+            dropdownMenu.classList.toggle('open');
+            const isOpen = dropdownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        };
+    
+    </script>
+
+    <!--Home Page Container and Content -->
+    <div class="homePageContainer">
+        <div class="homePageContent">
+            <h1>Become a Graphic Designer</h1>
+            <p><i>Master the art of graphic design with our comprehensive courses, tailored to unleash your creative potential and transform your passion into a profession.</i></p>
+            <div class="btn">
+                <a href="Signup.php"><button id="btn1">Register</button></a>
+                <a href="#courses"><button id="btn2">See more</button></a>
+            </div>
+            <p>Already registered? <a href="Login.php">Log in here</a></p>
+        </div>
+        
+        <!-- Picture -->
+        <div class="homePagePic">
+            <img id="myImage" src="graphics3.png" alt="graphics">
+        </div>
+    </div>
+    <script>
+        const imageURLs = [
+            'graphics3.png',
+            'graphics6.png',
+            'graphics5.png',
+            'graphics7.png',
+            'graphics9.png'
+        ];
+        let currentIndex = 0;
+        const imageElement = document.getElementById('myImage');
+    
+        // Function to change the image source one by one
+        function changeImageSource() {
+            const imageURL = imageURLs[currentIndex];
+            imageElement.src = imageURL;
+            currentIndex = (currentIndex + 1) % imageURLs.length;
+        }
+    
+        // Change the image initially
+        changeImageSource();
+    
+        // Change the image every 4 seconds
+        setInterval(changeImageSource, 4000);
+    </script>
+
+    <!--Photoshop-->
+    <section class="photoshop">
+        <div class="PhotoshopPic" id="photoshop_img"></div>
+        <div class="PhotoshopContent">
+          <h1>Learn Adobe Photoshop</h1>
+          <p>Embark on an exciting journey into the realm of digital artistry and visual storytelling with our comprehensive Photoshop course. Unlock the secrets of professional-grade image editing with Photoshop's versatile selection tools, layer management, and color correction capabilities. Learn to create stunning visual effects, remove imperfections, and transform ordinary images into extraordinary works of art. </p>
+          <a href="photoshop.html"><button class="btn">Learn More</button> </a>
+        </div>
+    </section>
+    <!--Illustrator-->
+    <section class="illustrator">
+        <div class="illustratorContent">
+          <h1>Learn Adobe Illustrator</h1>
+          <p>Are you ready to bring your creative ideas to life and venture into the world of vector graphics? Look no further than our comprehensive Adobe Illustrator course. This program will equip you with the essential skills to unlock the full potential of Adobe Illustrator's powerful tools and features. Learn to effectively use the pen tool, shape builder, and pathfinder to bring your ideas to life with impeccable precision and creativity.</p>
+          <a href="Iluustrator.html"><button class="btn">Learn More</button> </a>
+        </div>
+        <div class="illustratorPic" id="illustrator_img"></div>
+    </section>
+
+    <!--Team Page-->
+      <h1 id="teamHeading" >Our Team</h1>
+      <div class="Teamcontainer" id="instructor">
+        <div class="teamCard">
+            <div class="teamImage">
+                <img src="girl.png" alt="Instructor">
+            </div>
+            <div class="contentbox">
+                <h3>Sara Hameed</h3>
+                <h5>Undergraduate Software Engineer</h5>
+            </div>
+            <div class="icon">
+                <a href="https://www.facebook.com/profile.php?id=100069349324780&mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/sara-hameed-01625922b"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Hameedsarakhan"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="teamCard">
+            <div class="teamImage">
+                <img src="girl.png" alt="Instructor">
+            </div>
+            <div class="contentbox">
+                <h3>Sara Naeem</h3>
+                <h5>Undergraduate Software Engineer</h5>
+            </div>
+            <div class="icon">
+                <a href="https://www.facebook.com/sara.naeem.549436?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/sara-naeem-7072b322a"><i class="fab fa-linkedin"></i></a>
+                <a href="http://github.com/saranaeem1/"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="teamCard">
+            <div class="teamImage">
+                <img src="girl.png" alt="Instructor">
+            </div>
+            <div class="contentbox">
+                <h3>Meerab Tahir</h3>
+                <h5>Undergraduate Software Engineer</h5>
+            </div>
+            <div class="icon">
+                <a href="https://www.facebook.com/meerab.tahir.96"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/meerab-tahir-a5361022a/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/MeerabTahir"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="Courses_page" id="courses">
+        <h1>Our Courses</h1>
+        <div class="courses_container">
+            <div class="course-item">
+                <img src="illustrator.png" alt="Instructor 1">
+                <h2>Adobe Illustrator</h2>
+                <p>4 lessons</p>
+                <div class="rating">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <a href="sidebar.html"><button>Read More</button></a>
+            </div>
+            <div class="course-item">
+                <img src="photoshop.png" alt="Instructor 2">
+                <h2>Adobe Photoshop</h2>
+                <p>4 lessons</p>
+                <div class="rating">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                </div>
+                <a href="sidebar.html"><button>Read More</button></a>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>
+                    <li><a href="Login.php">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-column" id="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Questionnaire Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e2d8a67779.js" crossorigin="anonymous"></script>
+    <title>Frequenty Asked Questions</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size:14px;
+        }
+
+        .FAQ {
+        min-height: 100vh;
+        font-family: sans-serif;
+        background: #efefef;
+        display: flex;
+        justify-content: center;
+        }
+
+        .FAQcontainer {
+        position: relative;
+        background: #fff;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .FAQandImg_container {
+        position: relative;
+        width: 350px;
+        margin-left: 40px;
+        }
+
+        .title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 25px;
+        text-align: center;
+        }
+
+        .faq-content {
+        margin-top: 30px;
+        margin-right: 50px;
+        }
+
+        .question-answer {
+        width: 100%;
+        border-bottom: 1px solid #e8e8e8;
+        }
+
+        .question {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        .faq-img-container{
+            margin-right:30px;
+        }
+        .faq-img {
+        position: relative;
+        width: 320px;
+        }
+
+        .title-question {
+        margin: 20px 0px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #000;
+        }
+
+        .question-btn {
+        font-size: 1.5rem;
+        background: transparent;
+        border-color: transparent;
+        cursor: pointer;
+        }
+
+        .up-icon {
+        display: none;
+        }
+
+        .answer {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        display: none;
+        }
+
+        .show-text .answer {
+        display: block;
+        }
+
+        .show-text .up-icon {
+        display: inline;
+        }
+
+        .show-text .down-icon {
+        display: none;
+        }
+
+
+        @media screen and (min-width: 992px) {
+        .FAQandImg_container {
+            width: 920px;
+            height: 0;
+            display: flex;
+        }
+
+        .faq-img {
+            position: relative;
+            width: 420px;
+            top: 70px;
+        }
+
+        .question-answer {
+            width: 380px;
+        }
+
+        .faq-content {
+            margin-top: 60px;
+        }
+
+        .title {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="FAQ">
+        <div class="FAQcontainer">
+            <h1 class="title">Frequenty Asked Questions</h1>
+            <div class="FAQandImg_container">
+                <!-- Image -->
+                <div class="faq-img-container">
+                    <img src="faq1.png" alt="" class="faq-img">
+                </div>
+
+                <!-- FAQ Content -->
+                <div class="faq-content">
+                    <!-- Question 1 -->
+                    <div class="question-answer">
+                        <div class="question">
+                            <h3 class="title-question">How do I enroll in a course?</h3>
+
+                            <button class="question-btn">
+                                <span class="up-icon">
+                                    <i class="fas fa-chevron-up"></i>
+                                </span>
+                                <span class="down-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus deserunt dolor facilis. Itaque saepe modi quaerat? Modi veniam sunt corporis!</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-answer">
+                        <div class="question">
+                            <h3 class="title-question">Are the courses self-paced or do they have a specific schedule?</h3>
+                            <button class="question-btn">
+                                <span class="up-icon">
+                                    <i class="fas fa-chevron-up"></i>
+                                </span>
+                                <span class="down-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic corporis temporibus minus esse, nam provident porro ratione aliquid distinctio quisquam.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-answer">
+                        <div class="question">
+                            <h3 class="title-question">Is there a fee for enrolling in courses?</h3>
+                            <button class="question-btn">
+                                <span class="up-icon">
+                                    <i class="fas fa-chevron-up"></i>
+                                </span>
+                                <span class="down-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iusto.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-answer">
+                        <div class="question">
+                            <h3 class="title-question">How can I contact if I have a query?</h3>
+                            <button class="question-btn">
+                                <span class="up-icon">
+                                    <i class="fas fa-chevron-up"></i>
+                                </span>
+                                <span class="down-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="answer">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ducimus consectetur officia perferendis consequuntur dolorum, temporibus non porro autem minus.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+
+        const questions = document.querySelectorAll('.question-answer');//selects all elements in the document that have the class name question-answer
+        questions.forEach(function(question) {
+
+            const btn = question.querySelector('.question-btn');// Within each iteration, this line selects the button element with the class "question-btn" inside the current question-answer pair.
+            btn.addEventListener("click", function() { // whwn button is clicked function will execute
+                questions.forEach(function(item) {//It loops through all the question-answer pairs and removes the "show-text" class from each pair, except for the current one.
+                    if (item !== question) {
+                        item.classList.remove("show-text");
+                    }
+                })
+                question.classList.toggle("show-text");//It toggles the "show-text" class on the current question-answer pair.  This class controls the visibility of the answer section based on CSS rules.
+            })
+})
+    </script>
+</body>
+</html>

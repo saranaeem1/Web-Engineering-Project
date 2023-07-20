@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/6c526894c6.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+      <title>INTRODUCTION TO ILLUSTRATOR TOOLS</title>
+      
+        <style>
+          * ************************************************NAVBAR AND SIDEBAR********************************************** */
+     {@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');} 
+ /* **********************MEDIA QUERY************** */
+ 
+ @media only screen and (max-width:768px){
+  body{
+    max-width: 100%;
+    height:auto;
+    overflow-x:hidden;
+  }
+.blog_main_para{
+  word-wrap: break-word;
+  max-width: 350px;
+
+}
+.flexbox_main{
+  display:flex;
+  flex-direction: column;
+}
+.flexbox1 p{
+  word-wrap: break-word;
+  max-width: 350px;
+  margin:20px;
+}
+.blogsgallery{
+margin:20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  overflow-x:hidden;
+}
+.blogs img{
+  width: 150px;height:150px;
+}
+iframe{
+width:200px;
+  height:auto;
+  overflow:clip;
+}
+.heading{
+    font-size:14;
+}
+}
+iframe{
+  width:560px;
+  height:315px;
+  overflow: clip;
+}
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Home Page */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: black;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+nav .navigation ul li a:hover {
+    color: lightgray;
+}
+
+nav .openbtn {
+    font-size: 1.7rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-left: -50%;
+    position: relative;
+    padding: 10px 10px;
+    border: none;
+}
+
+nav .openbtn:hover {
+
+    color: rgb(140, 221, 241);
+}
+
+.toggle_btn {
+    color: white;
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dropdown_menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu ul li a {
+    text-decoration: none;
+    color: #3b97e3;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+
+/* Media query for responsive navbar */
+@media screen and (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+        left: 2rem;
+        width: unset;
+    }
+
+    nav .openbtn {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: -1%;
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.19)0px 10px 20px, rgba(0, 0, 0, 0.23)0px 6px 6px;
+}
+
+
+.sidebar a {
+    padding: 8px 8px 4px 26px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar i {
+    padding: 5px;
+}
+
+.sidebar a:hover {
+    color: rgb(140, 221, 241);
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.pic {
+  margin-bottom:10px ;
+    width: 85%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: lightpink;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    /* box-shadow: rgba(0,0,0,0.19)0px 10px 20px,rgba(0,0,0,0.23)0px 6px 6px; */
+}
+
+.pic img {
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+.announce h4 {
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.pic p {
+    font-size: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 50;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pic button {
+    padding: 5px 5px;
+    width: 100px;
+    background-color: #ec0d66;
+    color: #fff;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+        /* margin-top: 20%; */
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .pic {
+        max-width: 50%;
+    }
+
+
+  }
+            /* **********************FLEX BOXES************** */
+
+
+
+.heading{
+  
+    margin-top: 40px;
+    position: relative;
+    text-align: center;
+    background: rgba(248, 248, 248, 0.002);
+    margin:auto;
+}
+
+
+    
+    
+.flexbox1{
+    width:500px;
+margin-right:160px;
+}
+.heading2{
+    color: hsla(0, 0%, 1%, 0.773);
+    margin-left: 35px;
+    padding-top:10px;}
+
+p{
+    margin-top:15px ;
+    margin-left: 35px;
+    word-wrap:break-word;
+    text-align: justify;
+}
+.flexbox_main{
+display: flex;
+}
+
+.move{
+    width:470px;
+    padding-left:30px;
+
+}
+#pen{
+    height:300px;
+    padding-top: 30px;
+}
+     
+      
+    
+    
+    /* ********************************PROJECT COURSE PART**************************************** */
+
+    .mainbtn{
+
+  padding-top: 20px;
+padding-bottom:30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:auto;
+  flex-wrap:wrap;
+  height:auto;
+}
+    
+    
+    
+    
+    .blog_button{padding: 10px 20px;
+        background: #18684c;
+        color: white;
+        
+      border-color: #fdfdfd;
+       
+        align-items: center;
+        margin-right: 10px;
+      border-style:double;
+      border-radius: 0px;
+      cursor: pointer;
+    }
+    .ps{
+      margin-bottom:20px;
+        text-align: center;
+        padding-top: 50px;
+        color: rgb(249, 249, 249);
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 2px 2px #080707, 2px 2px #000000, 3px 2px #0b0b0b;
+      
+    }
+    
+    #btn2blog{
+        background-color: hsla(0, 0%, 100%, 0);
+      color: rgb(255, 255, 255);
+      border-color: #ffffff;
+      transition: width 2s;
+    
+    }
+    #btn2blog:hover{
+    width:100px;
+      background-color: hsl(0, 0%, 100%);
+      color: rgb(26, 99, 99);
+      border-color: #49e9c9;
+    }
+    .blog_button:hover{
+        background-color: hwb(168 98% 0% / 0.96);
+      color: rgb(10, 10, 10);
+      border-color: #1d7759;
+      
+       
+      
+        
+    }
+    .blog_main_para{
+
+      margin:auto;
+  text-align: center;
+  word-wrap: break-word;
+    width:700px;
+    color:white;
+    }
+    
+    
+    .desc a{
+  text-decoration: none;
+  color:black;
+}
+.desc a:hover{
+  color:black;
+}
+.desc a:visited{
+  color:#0a0a0a;
+}
+
+    
+    .blog{
+        width:100%;
+        
+    }
+    .blog_main{
+        width:100%;
+height:auto;
+background: linear-gradient(-45deg, rgb(26, 99, 99),#53d9d5,  #1a4a3b, #89f5e5);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+
+    }
+    
+.flex_para:hover{
+    font-weight: bold;
+
+}
+/* ************************INTRO TO TOOLS************************ */
+.heading span{
+    
+    position: relative;
+  display: inline-block;
+  color: rgb(44, 124, 124);
+  font-size: 50px;
+  font-style: italic;
+  font: 700 normal;
+  text-shadow: 0 0 10px #b1f4e9, 0 0 20px hsl(176, 81%, 82%), 0 0 30px #a0fcf7, 0 0 40px #a2f9f2, 0 0 70px #aef5e9, 0 0 80px #abfae1, 0 0 100px #a7f5db;
+  background-color: #fcfcfc00;
+  animation: neonAnimation 1.5s ease-in-out infinite alternate;
+
+  
+ 
+
+  animation-delay: calc(.2s * var(--i));
+justify-content: center;
+opacity: 0;
+  filter: blur(4px);
+  padding:10px;
+align-items: center;transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);}
+
+@keyframes  scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+/* ********************************OTHER BLOGS******************************* */
+.blogsheading{
+margin-top:20px;
+    text-align: center;
+}
+.blogsgallery{
+  display:flex;
+  flex-direction: row;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.blogs {
+
+margin:10px;
+  border: 1px solid #21f9e7;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height:auto;
+  transition: top 0.3s;
+  position:relative;
+
+}
+
+
+
+div.blogs:hover {
+  top: 10px;
+  border: 1px solid #55feeb; /* Adjust the value to control the distance of the movement */
+}
+
+
+div.blogs img {
+  width: 200px;
+  height: 250px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.desc:hover{
+    font-weight: bold;
+}
+/* ********************************FOOTER**************************************** */
+
+footer {
+  background-color: #24262d;
+  padding: 50px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  text-align: center; 
+}
+.footer-column p{
+  margin-left:0px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #bbb;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-media li a:hover {
+  color: #bbb;
+}
+
+.footer-bottom {
+  background-color:#797878;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+
+}
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-container {
+    justify-content: space-around; 
+  }
+
+  .footer-column {
+    width: 33.33%;
+    text-align: left; 
+  }
+
+}
+
+@media (min-width: 992px) {
+  .footer-column {
+    width: 25%;
+  }
+
+}
+    </style>
+
+
+</head>
+
+<body>
+   <!--***********************************************NAVBAR AND SIDEBAR*************************************************************************-->
+   <nav>
+    <img src="questionnaire (1) (1).png" alt="logo">
+    <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+    <div class="navigation">
+
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+    <!--For responsive navbar-->
+    <div class="toggle_btn"><i class="fas fa-bars"></i></div>
+    <div class="dropdown_menu">
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li><a href="final.html#courses">Courses</a></li>
+          <li><a href="feedback.php">Feedback</a></li>
+          <li><a href="Signup.php">Signup</a></li>
+          <li><a href="Login.php">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- side bar -->
+<div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+
+    <a href="Iluustrator.html">Illustrator Home Page</a>
+    <a href="ISlogodesigning.html">Logo Designing</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="ISsaving.html">Saving Options</a>
+
+    <div class="announce">
+        <h4>New Announcement</h4>
+    </div>
+
+    <div class="pic">
+
+        <img src="Add a heading(7).jpeg" alt="">
+        <p>Attention all graphic designers and creative enthusiasts!
+            We are thrilled to unveil our brand new graphic course, designed to
+            equip you with the skills.Get ready to unlock your creative potential
+            and embark on a transformative learning journey.</p>
+        <button>Learn more</button>
+    </div>
+</div>
+
+<script>
+    const openSidebar = () => {
+        document.getElementById("mySidebar").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "150px";
+    };
+
+    const closeSidebar = () => {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    };
+
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+    toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open');
+        const isOpen = dropdownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    };
+
+</script>
+    <!--***************************MAIN PART******************--> 
+    <div class="blog1">
+    
+        <div class="blog_main">
+            
+            <h1 class="ps">Introduction to Illustrator Tools</h1>
+            <p class="blog_main_para">Illustrator is an incredibly powerful tool that can transform
+                 ordinary images into stunning works of art.Whether you're a graphic designer,
+                  photographer, or simply someone with a passion for digital art, mastering 
+                   opens up a world of endless creative possibilities. In this blog post, 
+                   we'll explore some exciting ideas 
+                  an advanced Illustrator course that will take your skills to the next level.</p>
+<div class="mainbtn">
+  <button class="blog_button"id="btn2blog">Home</button>
+  <button onclick="window.location.href='index.php';" class="blog_button">Take Quiz</button></div>
+                  
+        </div>
+<!--***************************INTRO TO TOOLS******************--> 
+        <div class="Intro_to_tools">
+            <div class="heading">
+                <span style="--i:1">"Design</span>
+                <span style="--i:2">is</span>
+                <span style="--i:3">thinking</span>
+                <span style="--i:4">made </span>
+                <span style="--i:5">visual"</span>
+                
+            </div>
+            
+        
+            
+            <h1 class="heading2">Direct Selection Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">The Direct Selection tool lets you select, move, 
+                            or modify specific points or path segments in a path or a shape.
+                             Click the Direct Selection tool or press A. Select the object to
+                              view its anchor points and path segments.The direct Selection tool
+                               allows a user to select individual points of any object.
+                                We can also select segments of any object and drag them according
+                                 to the requirement. With the Direct Selection tool, you can
+                                  select individual path points and segments; you can also 
+                                  add or subtract items to/from the selection. In addition, 
+                                  you can also use the Direct Selection method and drag a marquee to pick sections 
+                              of the path and drag a part of it to create a selection rectangle.Remember, the behavior of the Direct Selection Tool can be further modified by using modifier keys such as Shift, Alt (Option on Mac), and Ctrl/Cmd. These keys can be used to add or remove selection, constrain movement, or duplicate objects while making selections.
+
+                              The Direct Selection Tool is an essential tool for precise editing and fine-tuning of vector objects in Adobe Illustrator.</p>
+
+    
+                    </div>
+                   
+                    <div class="flexbox2">
+                        
+<iframe  src="https://www.youtube.com/embed/F2qpL5y7-zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+                    <h1 class="heading2">Pen Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">Launch Adobe Illustrator and open the document you want to work on.
+                            Select the Pen Tool (P) from the Tools panel on the left side of the screen. If the Pen Tool is not visible, click and hold on the icon of the currently selected tool (e.g., Selection Tool) to reveal the flyout menu and then choose the Pen Tool.
+                            Click on the artboard to set the initial anchor point of the path you want to create.
+                            Move the cursor to the desired location where you want to create the next anchor point. Click and release the mouse button to create a straight line segment between the two anchor points.
+                            To create a curved line segment, click and drag the mouse while holding down the mouse button. This action creates direction handles that control the curvature of the path. The length and angle of the direction handles determine the shape of the curve.
+                            Continue clicking and dragging to create additional anchor points and curves as needed. Each click will create a straight line segment, and each click-and-drag action will create a curved line segment.
+                            To close the path and create a shape, click on the initial anchor point of the path. This will automatically close the path and create a closed shape.
+                            To edit the path, select the Direct Selection Tool (A) from the Tools panel. With the Direct Selection Tool, you can manipulate individual anchor points and adjust the curves of the path by dragging the direction handles.
+                        </p>
+    
+                    </div>
+                    <div class="flexbox2">
+                        <iframe  src="https://www.youtube.com/embed/Rk-JGsriJ4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Text Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para"> Type Tool (T): The Type Tool is used to create and edit regular, horizontal text. You can select this tool from the Tools panel or press the "T" key on your keyboard. Click on the canvas to create a text box, then start typing. You can adjust the font, size, color, and other text properties from the Character panel.
+
+                          Vertical Type Tool (Shift+T): The Vertical Type Tool allows you to create and edit vertical text. It works similarly to the regular Type Tool, but the text flows vertically instead of horizontally. You can access this tool by clicking and holding the Type Tool in the Tools panel or pressing Shift+T on your keyboard.
+                          
+                          Area Type Tool (T): The Area Type Tool is used to create text that flows within a closed shape or path. You can create a closed shape using the shape tools (e.g., Rectangle, Ellipse) and then use the Area Type Tool to click inside the shape and start typing. The text automatically adjusts and wraps within the shape.
+                          
+                          Type on a Path Tool (Shift+T): The Type on a Path Tool allows you to create text that follows a custom path. You can create a path using the Pen Tool or any other shape tool, and then select the Type on a Path Tool. Click on the path and start typing, and the text will conform to the shape of the path.
+                            
+                            </p>
+    
+                    </div>
+                    <div class="flexbox2">
+                      <iframe  src="https://www.youtube.com/embed/khg_RqXejis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Lasso Tool</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para"> Select the Lasso Tool: You can find the Lasso Tool in the Tools panel on the left side of the Illustrator interface. It is usually nested with other selection tools like the Selection Tool (V) or Direct Selection Tool (A). Click and hold on the selection tool group to reveal a flyout menu, then select the Lasso Tool.
+
+                          Make a freehand selection: With the Lasso Tool selected, click and drag on the artboard to draw a freehand selection shape around the objects or anchor points you want to select. You don't have to worry about drawing a perfect shape as the Lasso Tool is designed to detect objects or anchor points within the rough selection area.
+                          
+                          Add to or subtract from the selection: By default, the Lasso Tool adds to the existing selection. If you want to deselect objects or anchor points, hold down the Shift key while drawing with the Lasso Tool. This will subtract any selected objects or anchor points within the selection shape.
+                          Select the Lasso Tool: You can find the Lasso Tool in the Tools panel on the left side of the Illustrator interface. It is usually nested with other selection tools like the Selection Tool (V) or Direct Selection Tool (A). Click and hold on the selection tool group to reveal a flyout menu, then select the Lasso Tool.
+
+                            </p>
+    
+                    </div>
+                    <div class="flexbox2">
+                      <iframe  src="https://www.youtube.com/embed/3GV7ObTI6ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                    <h1 class="heading2">Perspective Grid</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">Select the Lasso Tool: You can find the Lasso Tool in the Tools panel on the left side of the Illustrator interface. It is usually nested with other selection tools like the Selection Tool (V) or Direct Selection Tool (A). Click and hold on the selection tool group to reveal a flyout menu, then select the Lasso Tool.
+
+                          Make a freehand selection: With the Lasso Tool selected, click and drag on the artboard to draw a freehand selection shape around the objects or anchor points you want to select. You don't have to worry about drawing a perfect shape as the Lasso Tool is designed to detect objects or anchor points within the rough selection area.
+                          
+                          Add to or subtract from the selection: By default, the Lasso Tool adds to the existing selection. If you want to deselect objects or anchor points, hold down the Shift key while drawing with the Lasso Tool. This will subtract any selected objects or anchor points within the selection shape.
+                          
+                          Fine-tune the selection: If you need to refine or adjust the selection, you can switch to the Direct Selection Tool (A) temporarily by holding down the Command (Mac) or Control (Windows) key. This allows you to click on individual objects or anchor points to modify the selection.</p>
+
+                    </div>
+                    <div class="flexbox2">
+                      <iframe src="https://www.youtube.com/embed/rDAaoAyCKxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                    <h1 class="heading2">Custom Brushes</h1>
+                <div class="flexbox_main">
+                    <div class="flexbox1">
+                        <p class="flex_para">Prepare the Artwork: Create or select the artwork that you want to use as a custom brush. This can be a shape, pattern, or even a hand-drawn illustration.
+
+                          Define the Brush: Select the artwork and go to the Brushes panel (Window > Brushes). Click on the "New Brush" icon at the bottom of the panel or go to the panel menu and choose "New Brush."
+                          
+                          Choose Brush Type: Illustrator offers several brush types to choose from, including Calligraphic, Scatter, Art, and Pattern brushes. Select the brush type that suits your artwork and click "OK."
+                          
+                          Adjust Brush Settings: In the Brush Options dialog box, you can adjust various settings such as size, spacing, angle, and other parameters depending on the brush type you selected. Modify these settings to achieve the desired brush effect and click "OK."
+                          
+                          Using a Custom Brush:
+                          
+                          Select the Brush Tool: Activate the Brush Tool (B) from the Tools panel on the left side of the Illustrator interface.Choose the Custom Brush: With the Brush Tool selected, go to the Brushes panel and click on the custom brush you want to use. The Brush Tool will now apply the selected custom brush stroke when you draw or paint on the canvas.
+                             
+    </p>
+                    </div>
+                    <div class="flexbox2">
+                        
+<iframe src="https://www.youtube.com/embed/xmblHeZcivA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </li>
+            </ol>
+        </div>
+        </li>
+    
+                </div>
+                
+            
+            
+
+</div>
+<h1 class="blogsheading">LEARN MORE </h1>
+<div class="blogsgallery">
+    
+    <div class="blogs">
+        <img src="IS 14.jfif" alt="Mountains" >
+      
+      <div class="desc"><a href="ISlogodesigning.html">Logo Designing</a></div>
+    </div>
+
+<div class="blogs">
+    <img src="IS 15.webp" alt="Forest">
+  
+  <div class="desc"><a href="illustrations.html">Illustrations</a></div>
+</div>
+
+<div class="blogs">
+    <img src="IS 16.png"Northern Lights">
+  
+  <div class="desc"><a href="ISsaving.html">Saving Options</a></div>
+</div>
+</div>
+    <!--********************************FOOTER**************************************** -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="final.html">Home</a></li>
+        <li><a href="final.html#courses">Courses</a></li>
+        <li><a href="final.html#instructor">Instructors</a></li>
+        <li><a href="help.php">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-media">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Questionaire Website. All rights reserved.</p>
+  </div>
+</footer>
+  
+
+
+    </body>
+</html>

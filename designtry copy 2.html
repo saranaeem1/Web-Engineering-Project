@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Design Principles Showcase</title>
+  <style>
+
+    .container {
+        background-color: lightblue;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    h1, h2, p {
+      margin: 10px 0;
+    }
+    
+    .principles {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    
+    .principle {
+      cursor: pointer;
+      padding: 10px;
+      margin: 0 10px;
+      background-color: white;
+      border: 1px solid #0a0909;
+      border-radius: 5px;
+    }
+    
+    .showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    #showcaseImage {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    
+    #showcaseDescription {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Design Principles Showcase</h1>
+    <div class="principles">
+      <div class="principle" id="simplicity">
+        <h2>Simplicity</h2>
+        <p>Keep designs clean, uncluttered, and easy to understand. Avoid unnecessary elements or excessive complexity.</p>
+      </div>
+      <div class="principle" id="balance">
+        <h2>Balance</h2>
+        <p>Achieve visual balance by distributing elements evenly throughout the design. Balance can be achieved through symmetrical, asymmetrical, or radial arrangements.</p>
+      </div>
+      <div class="principle" id="contrast">
+        <h2>Contrast</h2>
+        <p>Use contrasting elements (such as color, size, shape, or texture) to create visual interest and highlight important elements. Contrast helps to differentiate and draw attention.</p>
+      </div>
+      <!-- Add more design principles -->
+    </div>
+    <div class="showcase">
+      <img id="showcaseImage" src="" alt="">
+      <div id="showcaseDescription"></div>
+    </div>
+  </div>
+
+  <script>
+    var principles = document.querySelectorAll('.principle');
+
+    principles.forEach(function(principle) {
+      principle.addEventListener('click', function() {
+        var principleId = this.id;
+        var showcaseImage = document.getElementById('showcaseImage');
+        var showcaseDescription = document.getElementById('showcaseDescription');
+
+        // Update the showcase image and description based on the selected principle
+        switch (principleId) {
+          case 'simplicity':
+            showcaseImage.src = 'IS 1.jfif';
+            showcaseDescription.textContent = 'Keep designs clean, uncluttered, and easy to understand. Avoid unnecessary elements or excessive complexity.';
+            break;
+          case 'balance':
+            showcaseImage.src = 'IS 3.jfif';
+            showcaseDescription.textContent = 'Achieve visual balance by distributing elements evenly throughout the design. Balance can be achieved through symmetrical, asymmetrical, or radial arrangements.';
+            break;
+          case 'contrast':
+            showcaseImage.src = 'clonestampttool.jpg';
+            showcaseDescription.textContent = 'Use contrasting elements (such as color, size, shape, or texture) to create visual interest and highlight important elements. Contrast helps to differentiate and draw attention.';
+            break;
+          // Add more cases for other design principles
+        }
+      });
+    });
+  </script>
+</body>
+</html>
